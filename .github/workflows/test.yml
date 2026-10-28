@@ -23,7 +23,7 @@ jobs:
             tests/run_deploy_test.sh tests/run_installer_test.sh tests/run_loader_test.sh
           for file in plugin/_meta.lua plugin/deploy.lua plugin/ota.lua plugin/main.lua \
             plugin/theme/apply.lua patches/2-mac1984.lua assets/simpleui-icons/pack.lua; do
-            lua -e 'assert(loadfile(arg[1]))' "$file"
+            FILE="$file" lua -e 'assert(loadfile(assert(os.getenv("FILE"))))'
           done
       - name: Run tests
         run: |
