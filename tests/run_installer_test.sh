@@ -3,6 +3,13 @@ set -eu
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+VERSION="$(
+    lua - "$PROJECT_DIR/plugin/_meta.lua" <<'LUA'
+local path = assert(arg[1], "missing _meta.lua path")
+local meta = assert(dofile(path), "invalid _meta.lua")
+io.write(meta.version)
+LUA
+)"
 TMP_DIR="$(mktemp -d)"
 if [ "${KEEP_TEST_DIR:-0}" != "1" ]; then
     trap 'rm -rf "$TMP_DIR"' EXIT
@@ -38,7 +45,7 @@ test -f "$PLUGIN_DIR/loader.lua"
 test -f "$KO_DIR/patches/2-mac1984.lua"
 test -f "$KO_DIR/fonts/Mac1984Chicago.ttf"
 test -f "$SETTINGS_DIR/sui_icons/packs/Macintosh 1984/pack.lua"
-test "$(cat "$THEME_DIR/version")" = "1.2.0"
+test "$(cat "$THEME_DIR/version")" = "$VERSION"
 test "$(cat "$THEME_DIR/backup/D/icons/appbar.menu.svg")" = "STOCK"
 grep -Fq $'D\ticons/appbar.menu.svg' "$THEME_DIR/installed.tsv"
 grep -Fq $'S\tsimpleui/sui_settings.lua' "$THEME_DIR/installed.tsv"
@@ -49,20 +56,38 @@ if find "$KO_DIR" -name '._*' -print -quit | grep -q .; then
     exit 1
 fi
 
+# Fake the directory sidecars macOS can create on exFAT. Reinstall must clean
+# the theme-owned metadata without touching unrelated files.
+touch "$KO_DIR/plugins/._mac1984-koreader.koplugin"
+touch "$PLUGIN_DIR/._assets"
+touch "$THEME_DIR/._version"
+touch "$SETTINGS_DIR/sui_icons/packs/._Macintosh 1984"
+
 # Reinstalling must not replace the original backup with the themed icon.
 "$PROJECT_DIR/install.sh" "$KO_DIR" >/dev/null
 test "$(cat "$THEME_DIR/backup/D/icons/appbar.menu.svg")" = "STOCK"
+if find "$KO_DIR" -name '._*' -print -quit | grep -q .; then
+    printf 'AppleDouble sidecar survived reinstall\n' >&2
+    exit 1
+fi
 
 awk '{
     gsub(/\["changed_after_install"\] = false/, "[\"changed_after_install\"] = true")
     print
 }' "$SETTINGS_FILE" > "$SETTINGS_FILE.tmp"
 mv "$SETTINGS_FILE.tmp" "$SETTINGS_FILE"
+touch "$KO_DIR/plugins/._mac1984-koreader.koplugin"
+touch "$THEME_DIR/._version"
+touch "$SETTINGS_DIR/sui_icons/packs/._Macintosh 1984"
 "$PROJECT_DIR/uninstall.sh" "$KO_DIR" >/dev/null
 
 test "$(cat "$KO_DIR/icons/appbar.menu.svg")" = "STOCK"
 test ! -e "$PLUGIN_DIR"
 test ! -e "$THEME_DIR"
+if find "$KO_DIR" -name '._*' -print -quit | grep -q .; then
+    printf 'AppleDouble sidecar survived uninstall\n' >&2
+    exit 1
+fi
 grep -Fq 'packs/Solar Mono/' "$SETTINGS_FILE"
 grep -Fq '"OpenDyslexic"' "$SETTINGS_FILE"
 grep -Fq '["user_choice"] = "keep"' "$SETTINGS_FILE"

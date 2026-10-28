@@ -99,6 +99,20 @@ remove_sidecar() {
     fi
 }
 
+clean_macos_metadata() {
+    local target
+    for target in "$@"; do
+        [ -e "$target" ] || continue
+        if [ "$(uname -s)" = "Darwin" ] && command -v xattr >/dev/null 2>&1; then
+            xattr -cr "$target" 2>/dev/null || true
+        fi
+        if [ -d "$target" ]; then
+            find "$target" -type f \( -name '._*' -o -name '.DS_Store' \) -delete
+        fi
+        remove_sidecar "$target"
+    done
+}
+
 migrate_v1_backups
 
 is_recorded() {
@@ -242,6 +256,12 @@ install_simpleui_settings
 mkdir -p "$THEME_DIR/runtime"
 mv "$NEW_INSTALLED_FILE" "$INSTALLED_FILE"
 printf '%s\n' "$VERSION" > "$THEME_DIR/version"
+
+clean_macos_metadata "$PLUGIN_DEST" "$THEME_DIR" \
+    "$SETTINGS_DIR/$SIMPLEUI_PACK_PREFIX"
+remove_sidecar "$KO_DIR/patches/2-mac1984.lua"
+remove_sidecar "$KO_DIR/fonts/Mac1984Chicago.ttf"
+remove_sidecar "$SETTINGS_DIR/$SIMPLEUI_SETTINGS_REL"
 
 printf '\nMacintosh 1984 for KOReader %s installed.\n' "$VERSION"
 printf '  KOReader: %s\n' "$KO_DIR"

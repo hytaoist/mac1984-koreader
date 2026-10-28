@@ -6,6 +6,7 @@
 
 local ConfirmBox = require("ui/widget/confirmbox")
 local DataStorage = require("datastorage")
+local Device = require("device")
 local InfoMessage = require("ui/widget/infomessage")
 local LuaSettings = require("luasettings")
 local UIManager = require("ui/uimanager")
@@ -33,11 +34,26 @@ local function trim(value)
     return (tostring(value or ""):gsub("^%s+", ""):gsub("%s+$", ""))
 end
 
+local function is_web_url(value)
+    return type(value) == "string" and value:match("^https?://%S+$") ~= nil
+end
+
+local function can_open_link()
+    local ok, can_open = pcall(function() return Device:canOpenLink() end)
+    return ok and can_open == true
+end
+
+local function get_button_dialog()
+    local ok, ButtonDialog = pcall(require, "ui/widget/buttondialog")
+    return ok and ButtonDialog or nil
+end
+
 function Mac1984:init()
     local ok_meta, meta = pcall(dofile, self.path .. "/_meta.lua")
     if ok_meta and type(meta) == "table" then
         self.version = meta.version or self.version
         self.github = meta.github or self.github
+        self.sponsor_url = is_web_url(meta.sponsor_url) and meta.sponsor_url or nil
     end
 
     self.deploy = load_module(self.path .. "/deploy.lua")
@@ -139,17 +155,121 @@ end
 
 function Mac1984:showAbout()
     local deployed = self.deploy and self.deploy.deployed_version() or _("not installed")
+    local text = T(_(
+        "Macintosh 1984 for KOReader\n\n"
+        .. "Plugin: v%1\n"
+        .. "Installed payload: %2\n\n"
+        .. "A 1-bit Macintosh interface theme with 103 KOReader icons, "
+        .. "34 SimpleUI icons, ChicagoFLF, striped title bars and hard shadows.\n\n"
+        .. "Updates: Storefront > Update All, or Tools > Macintosh 1984 > Check for updates.\n\n"
+        .. "github.com/hytaoist/mac1984-koreader"
+    ), self.version or "?", deployed)
+
+    local ButtonDialog = get_button_dialog()
+    if not ButtonDialog then
+        if self.sponsor_url then
+            text = text .. "\n\n" .. T(_("Sponsor: %1"), self.sponsor_url)
+        end
+        UIManager:show(InfoMessage:new{ text = text })
+        return
+    end
+
+    local about_dialog
+    local buttons = {}
+    if self.sponsor_url then
+        table.insert(buttons, {{
+            text = _("Sponsor this project"),
+            callback = function() self:showSponsor() end,
+        }})
+    end
+    table.insert(buttons, {{
+        text = _("Close"),
+        callback = function() UIManager:close(about_dialog) end,
+    }})
+    about_dialog = ButtonDialog:new{
+        title = text,
+        buttons = buttons,
+    }
+    UIManager:show(about_dialog)
+end
+
+function Mac1984:copySponsorLink()
+    local copied = false
+    if Device.input and Device.input.setClipboardText then
+        copied = pcall(Device.input.setClipboardText, Device.input, self.sponsor_url)
+    end
     UIManager:show(InfoMessage:new{
-        text = T(_(
-            "Macintosh 1984 for KOReader\n\n"
-            .. "Plugin: v%1\n"
-            .. "Installed payload: %2\n\n"
-            .. "A 1-bit Macintosh interface theme with 103 KOReader icons, "
-            .. "34 SimpleUI icons, ChicagoFLF, striped title bars and hard shadows.\n\n"
-            .. "Updates: Storefront > Update All, or Tools > Macintosh 1984 > Check for updates.\n\n"
-            .. "github.com/hytaoist/mac1984-koreader"
-        ), self.version or "?", deployed),
+        text = copied and _("Sponsor link copied to the clipboard.")
+            or T(_("Sponsor link:\n%1"), self.sponsor_url),
+        timeout = copied and 2 or nil,
     })
+end
+
+function Mac1984:showSponsorQRCode()
+    local ok_qr, QRMessage = pcall(require, "ui/widget/qrmessage")
+    if not ok_qr or not QRMessage then
+        self:copySponsorLink()
+        return
+    end
+    UIManager:show(QRMessage:new{ text = self.sponsor_url })
+end
+
+function Mac1984:showSponsor()
+    if not self.sponsor_url then
+        UIManager:show(InfoMessage:new{
+            text = _("A sponsorship link has not been configured."),
+        })
+        return
+    end
+
+    local ButtonDialog = get_button_dialog()
+    if not ButtonDialog then
+        self:showSponsorQRCode()
+        return
+    end
+
+    local sponsor_dialog
+    local buttons = {
+        {
+            {
+                text = _("Show QR code"),
+                callback = function()
+                    UIManager:close(sponsor_dialog)
+                    self:showSponsorQRCode()
+                end,
+            },
+            {
+                text = _("Copy link"),
+                callback = function()
+                    UIManager:close(sponsor_dialog)
+                    self:copySponsorLink()
+                end,
+            },
+        },
+    }
+    if can_open_link() then
+        table.insert(buttons, {{
+            text = _("Open sponsor page in browser"),
+            callback = function()
+                UIManager:close(sponsor_dialog)
+                Device:openLink(self.sponsor_url)
+            end,
+        }})
+    end
+    table.insert(buttons, {{
+        text = _("Close"),
+        callback = function() UIManager:close(sponsor_dialog) end,
+    }})
+
+    sponsor_dialog = ButtonDialog:new{
+        title = T(_(
+            "Sponsor Macintosh 1984\n\n"
+            .. "If this theme saves you time or makes your reading setup more enjoyable, "
+            .. "please consider sponsoring its continued maintenance.\n\n%1"
+        ), self.sponsor_url),
+        buttons = buttons,
+    }
+    UIManager:show(sponsor_dialog)
 end
 
 function Mac1984:checkForUpdate()

@@ -3,6 +3,7 @@ set -eu
 
 PLUGIN_NAME="mac1984-koreader.koplugin"
 THEME_PACK_NAME="Macintosh 1984"
+SIMPLEUI_PACK_PREFIX="simpleui/sui_icons/packs/$THEME_PACK_NAME"
 SIMPLEUI_SETTINGS_REL="simpleui/sui_settings.lua"
 
 find_koreader_dir() {
@@ -155,10 +156,16 @@ done < "$INSTALLED_FILE"
 # The plugin folder is managed separately from the deployed theme manifest.
 rm -rf "$PLUGIN_DEST"
 rm -rf "$THEME_DIR"
+remove_sidecar "$PLUGIN_DEST"
+remove_sidecar "$THEME_DIR"
+remove_sidecar "$SETTINGS_DIR/$SIMPLEUI_PACK_PREFIX"
+remove_sidecar "$KO_DIR/patches/2-mac1984.lua"
+remove_sidecar "$KO_DIR/fonts/Mac1984Chicago.ttf"
+remove_sidecar "$SETTINGS_DIR/$SIMPLEUI_SETTINGS_REL"
 
 rmdir "$KO_DIR/icons" 2>/dev/null || true
 rmdir "$KO_DIR/plugins" 2>/dev/null || true
-rmdir "$SETTINGS_DIR/simpleui/sui_icons/packs/$THEME_PACK_NAME" 2>/dev/null || true
+rmdir "$SETTINGS_DIR/$SIMPLEUI_PACK_PREFIX" 2>/dev/null || true
 rmdir "$SETTINGS_DIR/simpleui/sui_icons/packs" 2>/dev/null || true
 rmdir "$SETTINGS_DIR/simpleui/sui_icons" 2>/dev/null || true
 rmdir "$SETTINGS_DIR/simpleui" 2>/dev/null || true

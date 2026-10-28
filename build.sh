@@ -19,6 +19,7 @@ LUA
 
 PLUGIN_ARCHIVE="$DIST_DIR/mac1984-koreader-v$VERSION.koplugin.zip"
 STANDALONE_ARCHIVE="$DIST_DIR/mac1984-koreader-v$VERSION.zip"
+ZIP_BUILDER="$SCRIPT_DIR/tools/make_zip.py"
 
 rm -rf "$STAGE_DIR"
 mkdir -p "$PLUGIN_STAGE" "$STANDALONE_STAGE"
@@ -43,13 +44,12 @@ chmod +x "$STANDALONE_STAGE/install.sh" "$STANDALONE_STAGE/uninstall.sh"
 
 find "$STAGE_DIR" -name '.DS_Store' -delete
 find "$STAGE_DIR" -name '._*' -delete
+find "$STAGE_DIR" -type d -name '__pycache__' -prune -exec rm -rf {} +
+find "$STAGE_DIR" -type f -name '*.pyc' -delete
 
 rm -f "$PLUGIN_ARCHIVE" "$STANDALONE_ARCHIVE" "$DIST_DIR/SHA256SUMS"
-(
-    cd "$STAGE_DIR"
-    zip -qr "$PLUGIN_ARCHIVE" "$PLUGIN_NAME"
-    zip -qr "$STANDALONE_ARCHIVE" "mac1984-koreader"
-)
+python3 "$ZIP_BUILDER" "$PLUGIN_STAGE" "$PLUGIN_NAME" "$PLUGIN_ARCHIVE"
+python3 "$ZIP_BUILDER" "$STANDALONE_STAGE" "mac1984-koreader" "$STANDALONE_ARCHIVE"
 
 if ! unzip -Z1 "$PLUGIN_ARCHIVE" | grep -q "^$PLUGIN_NAME/_meta.lua$"; then
     printf 'Storefront archive validation failed: missing %s/_meta.lua\n' "$PLUGIN_NAME" >&2

@@ -25,10 +25,11 @@ jobs:
       - name: Test and build
         run: |
           lua tests/patch_smoke_test.lua plugin/theme/apply.lua
+          lua tests/main_test.lua plugin/main.lua
           ./tests/run_loader_test.sh
           ./tests/run_deploy_test.sh
           ./tests/run_installer_test.sh
-          ./build.sh
+          ./tests/run_build_repro_test.sh
       - name: Publish GitHub release
         env:
           GH_TOKEN: ${{ github.token }}

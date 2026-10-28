@@ -83,7 +83,7 @@ koreader/.mac1984-theme/version
 安装后完全退出 KOReader 再重新打开。若开启了“保持 KOReader 运行”，请先退出到
 Kindle 主界面。
 
-也可以把 `dist/mac1984-koreader-v1.2.0.koplugin.zip` 解压到
+也可以把 `dist/mac1984-koreader-v1.2.1.koplugin.zip` 解压到
 `koreader/plugins/`；首次启动时插件会自动部署主题并提示重启。
 
 ## 插件菜单
@@ -93,11 +93,21 @@ Kindle 主界面。
 - **Reinstall / repair theme files**：重新部署当前版本的全部文件。
 - **Disable and restore original files**：停用主题，并把图标和 SimpleUI 设置恢复到安装前。
 - **Check for updates**：手动安装也可使用 GitHub Release OTA。
-- **About**：查看插件版本、已部署版本和项目地址。
+- **About**：查看插件版本、已部署版本、项目地址和赞助入口。
+
+## 赞助支持
+
+**工具 → Macintosh 1984 → About → Sponsor this project** 提供三种赞助入口：
+
+- 在电子墨水屏上显示二维码，方便用手机扫码。
+- 复制赞助链接到 KOReader 剪贴板。
+- 在设备支持外部浏览器时直接打开赞助页面。
+
+赞助地址由 `plugin/_meta.lua` 中的 `sponsor_url` 统一配置，不需要在界面代码中重复维护。
 
 ## 从 v1.1.0 升级
 
-直接运行新版 `install.sh`，或从 Storefront 安装 `v1.2.0`。插件会识别旧版无前缀的
+直接运行新版 `install.sh`，或从 Storefront 安装最新版。插件会识别旧版无前缀的
 `installed.tsv`，并把旧备份迁移到新的 `backup/D/`、`backup/S/` 结构，不会覆盖原来的
 备份文件。
 
@@ -153,20 +163,22 @@ KOReader 改变了某个控件接口，也不会阻止启动。
 输出：
 
 ```text
-dist/mac1984-koreader-v1.2.0.koplugin.zip  Storefront Release asset
-dist/mac1984-koreader-v1.2.0.zip          手动安装包
+dist/mac1984-koreader-v1.2.1.koplugin.zip  Storefront Release asset
+dist/mac1984-koreader-v1.2.1.zip          手动安装包
 dist/SHA256SUMS
 ```
 
 Storefront 要求 Release asset 的 ZIP 根目录为 `mac1984-koreader.koplugin/`，且目录内有
 `_meta.lua`。`build.sh` 会自动检查该结构，并拒绝错误的 ZIP 根目录。
+ZIP 使用固定文件顺序、时间戳和权限生成，因此本机与 GitHub Actions 构建出的文件及
+SHA-256 哈希保持一致。
 
 首次发布仓库：
 
 ```bash
 git init
 git add .
-git commit -m "Macintosh 1984 v1.2.0"
+git commit -m "Macintosh 1984 v1.2.1"
 CREATE_GITHUB_REPO=1 ./publish.sh
 ```
 
@@ -176,7 +188,7 @@ CREATE_GITHUB_REPO=1 ./publish.sh
 ./publish.sh
 ```
 
-`publish.sh` 会推送 tag `v1.2.0`、设置 `koreader-plugin` topic，并上传
+`publish.sh` 会推送 `v<version>` tag、设置 `koreader-plugin` topic，并上传
 `.koplugin.zip`。仓库中的 `.github/workflows/release.yml` 也支持在推送 `v*` tag 时
 自动构建和发布 Release。
 
@@ -184,12 +196,14 @@ CREATE_GITHUB_REPO=1 ./publish.sh
 
 ```bash
 lua tests/patch_smoke_test.lua plugin/theme/apply.lua
+lua tests/main_test.lua plugin/main.lua
 ./tests/run_loader_test.sh
 ./tests/run_deploy_test.sh
 ./tests/run_installer_test.sh
-./build.sh
+./tests/run_build_repro_test.sh
 ```
 
 测试覆盖首次部署、重复安装、OTA 版本升级、旧版备份迁移、SimpleUI 设置恢复、卸载以及
-Storefront ZIP 根目录校验。图标由 `tools/generate_icons.py` 生成；字体许可见
+Storefront ZIP 根目录校验。安装器测试还覆盖 macOS AppleDouble 元数据清理；构建测试会
+连续构建两次并逐字节比较产物。图标由 `tools/generate_icons.py` 生成；字体许可见
 `assets/fonts/LICENSE-ChicagoFLF.txt`。代码使用 MIT 许可，图标使用 CC0。
