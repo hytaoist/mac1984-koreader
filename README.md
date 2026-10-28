@@ -6,6 +6,8 @@
 
 已在 KOReader `v2026.07.2` + SimpleUI `3.0` 的 Kindle Paperwhite 4 上验证。
 
+发布页：[github.com/hytaoist/mac1984-koreader/releases](https://github.com/hytaoist/mac1984-koreader/releases)
+
 这是非官方粉丝主题，与 Apple 或 KOReader 项目没有隶属关系；"Macintosh" 在这里仅用于
 描述视觉风格。
 
