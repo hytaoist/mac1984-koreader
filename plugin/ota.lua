@@ -78,6 +78,24 @@ local function shell_quote(value)
     return "'" .. tostring(value):gsub("'", "'\\''") .. "'"
 end
 
+local function tracked_file_handle(file)
+    local closed = false
+    local handle = {}
+
+    function handle:write(chunk)
+        if closed then return nil, "closed" end
+        return file:write(chunk)
+    end
+
+    function handle:close()
+        if closed then return true end
+        closed = true
+        return file:close()
+    end
+
+    return handle
+end
+
 function M.download(url, destination)
     local ok_http, http = pcall(require, "socket.http")
     local ok_socket, socket = pcall(require, "socket")
@@ -85,18 +103,21 @@ function M.download(url, destination)
     if ok_http and ok_socket and ok_socketutil then
         local file = io.open(destination, "wb")
         if file then
+            -- socketutil.file_sink closes its handle at end-of-stream. Track the
+            -- state so our cleanup cannot close the same file a second time.
+            local handle = tracked_file_handle(file)
             socketutil:set_timeout(socketutil.FILE_BLOCK_TIMEOUT, 180)
             local ok, code = pcall(function()
                 return socket.skip(1, http.request{
                     url = url,
                     method = "GET",
                     headers = { ["User-Agent"] = USER_AGENT },
-                    sink = socketutil.file_sink(file),
+                    sink = socketutil.file_sink(handle),
                     redirect = true,
                 })
             end)
             socketutil:reset_timeout()
-            file:close()
+            handle:close()
             if ok and code == 200 then return true end
         end
     end

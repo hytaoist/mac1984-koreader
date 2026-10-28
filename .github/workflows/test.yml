@@ -24,7 +24,7 @@ jobs:
             tests/run_installer_test.sh tests/run_loader_test.sh
           for file in plugin/_meta.lua plugin/deploy.lua plugin/ota.lua plugin/main.lua \
             plugin/theme/apply.lua patches/2-mac1984.lua assets/simpleui-icons/pack.lua \
-            tests/main_test.lua; do
+            tests/main_test.lua tests/ota_test.lua; do
             FILE="$file" lua -e 'assert(loadfile(assert(os.getenv("FILE"))))'
           done
           python3 -m py_compile tools/make_zip.py
@@ -32,6 +32,7 @@ jobs:
         run: |
           lua tests/patch_smoke_test.lua plugin/theme/apply.lua
           lua tests/main_test.lua plugin/main.lua
+          lua tests/ota_test.lua plugin/ota.lua
           ./tests/run_loader_test.sh
           ./tests/run_deploy_test.sh
           ./tests/run_installer_test.sh

@@ -109,11 +109,11 @@ local Device = require("device")
 local Mac1984 = assert(loadfile(arg[1] or "plugin/main.lua"))()
 local plugin = Mac1984:extend{
     path = "plugin",
-    version = "1.2.1",
+    version = "1.2.2",
     github = "hytaoist/mac1984-koreader",
     sponsor_url = "https://example.com/sponsor",
     deploy = {
-        deployed_version = function() return "1.2.1" end,
+        deployed_version = function() return "1.2.2" end,
     },
 }
 

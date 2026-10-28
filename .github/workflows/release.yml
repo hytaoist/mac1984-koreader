@@ -26,6 +26,7 @@ jobs:
         run: |
           lua tests/patch_smoke_test.lua plugin/theme/apply.lua
           lua tests/main_test.lua plugin/main.lua
+          lua tests/ota_test.lua plugin/ota.lua
           ./tests/run_loader_test.sh
           ./tests/run_deploy_test.sh
           ./tests/run_installer_test.sh

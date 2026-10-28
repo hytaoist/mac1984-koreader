@@ -83,7 +83,7 @@ koreader/.mac1984-theme/version
 安装后完全退出 KOReader 再重新打开。若开启了“保持 KOReader 运行”，请先退出到
 Kindle 主界面。
 
-也可以把 `dist/mac1984-koreader-v1.2.1.koplugin.zip` 解压到
+也可以把 `dist/mac1984-koreader-v1.2.2.koplugin.zip` 解压到
 `koreader/plugins/`；首次启动时插件会自动部署主题并提示重启。
 
 ## 插件菜单
@@ -163,8 +163,8 @@ KOReader 改变了某个控件接口，也不会阻止启动。
 输出：
 
 ```text
-dist/mac1984-koreader-v1.2.1.koplugin.zip  Storefront Release asset
-dist/mac1984-koreader-v1.2.1.zip          手动安装包
+dist/mac1984-koreader-v1.2.2.koplugin.zip  Storefront Release asset
+dist/mac1984-koreader-v1.2.2.zip          手动安装包
 dist/SHA256SUMS
 ```
 
@@ -178,7 +178,7 @@ SHA-256 哈希保持一致。
 ```bash
 git init
 git add .
-git commit -m "Macintosh 1984 v1.2.1"
+git commit -m "Macintosh 1984 v1.2.2"
 CREATE_GITHUB_REPO=1 ./publish.sh
 ```
 
@@ -197,6 +197,7 @@ CREATE_GITHUB_REPO=1 ./publish.sh
 ```bash
 lua tests/patch_smoke_test.lua plugin/theme/apply.lua
 lua tests/main_test.lua plugin/main.lua
+lua tests/ota_test.lua plugin/ota.lua
 ./tests/run_loader_test.sh
 ./tests/run_deploy_test.sh
 ./tests/run_installer_test.sh
