@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <title>chevron left</title>
+  <g fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M20 7L10 16l10 9" fill="none" stroke-width="3"/>
+  </g>
+</svg>

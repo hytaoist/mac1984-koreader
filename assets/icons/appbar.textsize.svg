@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <title>appbar textsize</title>
+  <g fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M3 27L11 5h5l8 22" fill="none" stroke-width="3"/><line x1="7" y1="19" x2="20" y2="19" stroke-width="3"/><line x1="26" y1="8" x2="26" y2="25" stroke-width="2"/><path d="M22 12l4-5 4 5" fill="none" stroke-width="2"/><path d="M22 21l4 5 4-5" fill="none" stroke-width="2"/>
+  </g>
+</svg>

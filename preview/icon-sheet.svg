@@ -1,0 +1,416 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="876" height="1824" viewBox="0 0 876 1824">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="22" y="34" font-family="monospace" font-size="19" font-weight="bold">Macintosh 1984 / KOReader icon set</text>
+<g transform="translate(42,94) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="4" y="5" width="24" height="22" fill="none" stroke-width="2"/><line x1="8.0" y1="9" x2="24.0" y2="9" stroke-width="2"/><line x1="6.0" y1="13" x2="26.0" y2="13" stroke-width="2"/><line x1="9.5" y1="17" x2="22.5" y2="17" stroke-width="2"/><line x1="7.0" y1="21" x2="25.0" y2="21" stroke-width="2"/><polygon points="20,3 27,3 27,10" fill="none" stroke-width="2"/>
+  </g>
+<text x="74" y="173" text-anchor="middle" font-family="monospace" font-size="8">align.auto</text>
+<g transform="translate(146,94) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="4" y="5" width="24" height="22" fill="none" stroke-width="2"/><line x1="8.0" y1="9" x2="24.0" y2="9" stroke-width="2"/><line x1="6.0" y1="13" x2="26.0" y2="13" stroke-width="2"/><line x1="9.5" y1="17" x2="22.5" y2="17" stroke-width="2"/><line x1="7.0" y1="21" x2="25.0" y2="21" stroke-width="2"/>
+  </g>
+<text x="178" y="173" text-anchor="middle" font-family="monospace" font-size="8">align.center</text>
+<g transform="translate(250,94) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="4" y="5" width="24" height="22" fill="none" stroke-width="2"/><line x1="7" y1="9" x2="25" y2="9" stroke-width="2"/><line x1="7" y1="13" x2="25" y2="13" stroke-width="2"/><line x1="7" y1="17" x2="25" y2="17" stroke-width="2"/><line x1="7" y1="21" x2="25" y2="21" stroke-width="2"/>
+  </g>
+<text x="282" y="173" text-anchor="middle" font-family="monospace" font-size="8">align.justify</text>
+<g transform="translate(354,94) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="4" y="5" width="24" height="22" fill="none" stroke-width="2"/><line x1="7" y1="9" x2="23" y2="9" stroke-width="2"/><line x1="7" y1="13" x2="27" y2="13" stroke-width="2"/><line x1="7" y1="17" x2="20" y2="17" stroke-width="2"/><line x1="7" y1="21" x2="25" y2="21" stroke-width="2"/>
+  </g>
+<text x="386" y="173" text-anchor="middle" font-family="monospace" font-size="8">align.left</text>
+<g transform="translate(458,94) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="4" y="5" width="24" height="22" fill="none" stroke-width="2"/><line x1="9" y1="9" x2="25" y2="9" stroke-width="2"/><line x1="5" y1="13" x2="25" y2="13" stroke-width="2"/><line x1="12" y1="17" x2="25" y2="17" stroke-width="2"/><line x1="7" y1="21" x2="25" y2="21" stroke-width="2"/>
+  </g>
+<text x="490" y="173" text-anchor="middle" font-family="monospace" font-size="8">align.right</text>
+<g transform="translate(562,94) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <circle cx="16" cy="16" r="12" fill="none" stroke-width="2"/><path d="M16 4a12 12 0 000 24z" fill="#000" stroke="none"/><line x1="13" y1="7" x2="13" y2="9" stroke-width="2"/><line x1="19" y1="23" x2="19" y2="25" stroke-width="2"/>
+  </g>
+<text x="594" y="173" text-anchor="middle" font-family="monospace" font-size="8">appbar.contrast</text>
+<g transform="translate(666,94) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M7 3v22h22" fill="none" stroke-width="3"/><path d="M3 7h22v22" fill="none" stroke-width="3"/><line x1="13" y1="13" x2="19" y2="19" stroke-width="2"/><line x1="19" y1="13" x2="13" y2="19" stroke-width="2"/>
+  </g>
+<text x="698" y="173" text-anchor="middle" font-family="monospace" font-size="8">appbar.crop</text>
+<g transform="translate(770,94) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M3 9h10l3 3h13v16H3z" fill="none" stroke-width="2"/><line x1="3" y1="12" x2="26" y2="12" stroke-width="2"/><rect x="6" y="6" width="8" height="3" fill="#000" stroke="none"/>
+  </g>
+<text x="802" y="173" text-anchor="middle" font-family="monospace" font-size="8">appbar.filebrows</text>
+<g transform="translate(42,226) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="3" y="5" width="26" height="22" fill="none" stroke-width="2"/><line x1="7" y1="11" x2="25" y2="11" stroke-width="3"/><line x1="7" y1="16" x2="25" y2="16" stroke-width="3"/><line x1="7" y1="21" x2="25" y2="21" stroke-width="3"/>
+  </g>
+<text x="74" y="305" text-anchor="middle" font-family="monospace" font-size="8">appbar.menu</text>
+<g transform="translate(146,226) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M3 7c5-2 9-1 13 2v19c-4-3-8-4-13-2z" fill="none" stroke-width="2"/><path d="M29 7c-5-2-9-1-13 2v19c4-3 8-4 13-2z" fill="none" stroke-width="2"/><line x1="16" y1="9" x2="16" y2="27" stroke-width="1"/>
+  </g>
+<text x="178" y="305" text-anchor="middle" font-family="monospace" font-size="8">appbar.navigatio</text>
+<g transform="translate(250,226) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="4" y="5" width="24" height="22" fill="none" stroke-width="2"/><path d="M10 13h-4v-4M22 9v4h4M10 19H6v4M26 19h-4v4" fill="none" stroke-width="2"/><line x1="11" y1="16" x2="21" y2="16" stroke-width="2"/>
+  </g>
+<text x="282" y="305" text-anchor="middle" font-family="monospace" font-size="8">appbar.pagefit</text>
+<g transform="translate(354,226) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="3" y="6" width="11" height="21" fill="none" stroke-width="2"/><rect x="18" y="6" width="11" height="21" fill="none" stroke-width="2"/><line x1="7" y1="11" x2="10" y2="11" stroke-width="2"/><line x1="22" y1="11" x2="25" y2="11" stroke-width="2"/>
+  </g>
+<text x="386" y="305" text-anchor="middle" font-family="monospace" font-size="8">appbar.pageview</text>
+<g transform="translate(458,226) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <circle cx="16" cy="16" r="12" fill="none" stroke-width="2"/><line x1="4" y1="16" x2="11" y2="16" stroke-width="2"/><line x1="21" y1="16" x2="28" y2="16" stroke-width="2"/><circle cx="16" cy="16" r="4" fill="none" stroke-width="2"/><rect x="15" y="15" width="2" height="2" fill="#000" stroke="none"/>
+  </g>
+<text x="490" y="305" text-anchor="middle" font-family="monospace" font-size="8">appbar.pokeball</text>
+<g transform="translate(562,226) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="8" y="8" width="16" height="16" fill="none" stroke-width="2"/><path d="M5 7V2h5" fill="none" stroke-width="2"/><path d="M5 7c5-5 14-5 20 0" fill="none" stroke-width="2"/>
+  </g>
+<text x="594" y="305" text-anchor="middle" font-family="monospace" font-size="8">appbar.rotation</text>
+<g transform="translate(666,226) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <circle cx="13" cy="13" r="8" fill="none" stroke-width="2"/><line x1="19" y1="19" x2="28" y2="28" stroke-width="4"/><rect x="9" y="8" width="8" height="10" fill="none" stroke-width="1"/>
+  </g>
+<text x="698" y="305" text-anchor="middle" font-family="monospace" font-size="8">appbar.search</text>
+<g transform="translate(770,226) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <line x1="4" y1="8" x2="28" y2="8" stroke-width="2"/><rect x="9" y="6" width="4" height="4" fill="#000" stroke="none"/><line x1="4" y1="16" x2="28" y2="16" stroke-width="2"/><rect x="18" y="14" width="4" height="4" fill="#000" stroke="none"/><line x1="4" y1="24" x2="28" y2="24" stroke-width="2"/><rect x="6" y="22" width="4" height="4" fill="#000" stroke="none"/>
+  </g>
+<text x="802" y="305" text-anchor="middle" font-family="monospace" font-size="8">appbar.settings</text>
+<g transform="translate(42,358) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M3 27L11 5h5l8 22" fill="none" stroke-width="3"/><line x1="7" y1="19" x2="20" y2="19" stroke-width="3"/><line x1="26" y1="8" x2="26" y2="25" stroke-width="2"/><path d="M22 12l4-5 4 5" fill="none" stroke-width="2"/><path d="M22 21l4 5 4-5" fill="none" stroke-width="2"/>
+  </g>
+<text x="74" y="437" text-anchor="middle" font-family="monospace" font-size="8">appbar.textsize</text>
+<g transform="translate(146,358) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M8 26L22 12l-3-3L5 23z" fill="none" stroke-width="2"/><path d="M19 5l8 8-5 5-8-8z" fill="none" stroke-width="2"/><rect x="4" y="22" width="5" height="5" fill="#000" stroke="none"/>
+  </g>
+<text x="178" y="437" text-anchor="middle" font-family="monospace" font-size="8">appbar.tools</text>
+<g transform="translate(250,358) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <line x1="8" y1="6" x2="24" y2="6" stroke-width="3"/><line x1="16" y1="6" x2="16" y2="27" stroke-width="3"/><line x1="12" y1="27" x2="20" y2="27" stroke-width="3"/><line x1="5" y1="11" x2="8" y2="11" stroke-width="2"/><line x1="24" y1="11" x2="27" y2="11" stroke-width="2"/>
+  </g>
+<text x="282" y="437" text-anchor="middle" font-family="monospace" font-size="8">appbar.typeset</text>
+<g transform="translate(354,358) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <line x1="16" y1="4" x2="16" y2="27" stroke-width="3"/><polygon points="16,4 8,12 24,12" fill="#000" stroke="none"/><line x1="5" y1="4" x2="27" y2="4" stroke-width="3"/>
+  </g>
+<text x="386" y="437" text-anchor="middle" font-family="monospace" font-size="8">back.top.rtl</text>
+<g transform="translate(458,358) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <line x1="16" y1="4" x2="16" y2="27" stroke-width="3"/><polygon points="16,4 8,12 24,12" fill="#000" stroke="none"/><line x1="5" y1="4" x2="27" y2="4" stroke-width="3"/>
+  </g>
+<text x="490" y="437" text-anchor="middle" font-family="monospace" font-size="8">back.top</text>
+<g transform="translate(562,358) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M3 7c5-2 9-1 13 2v19c-4-3-8-4-13-2z" fill="none" stroke-width="2"/><path d="M29 7c-5-2-9-1-13 2v19c4-3 8-4 13-2z" fill="none" stroke-width="2"/><line x1="16" y1="9" x2="16" y2="27" stroke-width="1"/>
+  </g>
+<text x="594" y="437" text-anchor="middle" font-family="monospace" font-size="8">book.opened</text>
+<g transform="translate(666,358) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M7 3h18v26L16 22 7 29z" fill="none" stroke-width="2"/>
+  </g>
+<text x="698" y="437" text-anchor="middle" font-family="monospace" font-size="8">bookmark</text>
+<g transform="translate(770,358) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <circle cx="16" cy="16" r="12" fill="none" stroke-width="2"/><path d="M9 9l14 14M23 9L9 23" fill="none" stroke-width="3"/>
+  </g>
+<text x="802" y="437" text-anchor="middle" font-family="monospace" font-size="8">cancel</text>
+<g transform="translate(42,490) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M5 17l6 6L27 7" fill="none" stroke-width="4"/>
+  </g>
+<text x="74" y="569" text-anchor="middle" font-family="monospace" font-size="8">check</text>
+<g transform="translate(146,490) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M8 7v18M22 7L11 16l11 9" fill="none" stroke-width="3"/>
+  </g>
+<text x="178" y="569" text-anchor="middle" font-family="monospace" font-size="8">chevron.first</text>
+<g transform="translate(250,490) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M24 7v18M10 7l11 9-11 9" fill="none" stroke-width="3"/>
+  </g>
+<text x="282" y="569" text-anchor="middle" font-family="monospace" font-size="8">chevron.last</text>
+<g transform="translate(354,490) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M20 7L10 16l10 9" fill="none" stroke-width="3"/>
+  </g>
+<text x="386" y="569" text-anchor="middle" font-family="monospace" font-size="8">chevron.left</text>
+<g transform="translate(458,490) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M12 7l10 9-10 9" fill="none" stroke-width="3"/>
+  </g>
+<text x="490" y="569" text-anchor="middle" font-family="monospace" font-size="8">chevron.right</text>
+<g transform="translate(562,490) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M7 20l9-10 9 10" fill="none" stroke-width="3"/>
+  </g>
+<text x="594" y="569" text-anchor="middle" font-family="monospace" font-size="8">chevron.up</text>
+<g transform="translate(666,490) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="3" y="3" width="26" height="26" fill="none" stroke-width="2"/><path d="M8 8l16 16M24 8L8 24" fill="none" stroke-width="3"/>
+  </g>
+<text x="698" y="569" text-anchor="middle" font-family="monospace" font-size="8">close</text>
+<g transform="translate(770,490) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="3" y="6" width="26" height="20" fill="none" stroke-width="2"/>
+  </g>
+<text x="802" y="569" text-anchor="middle" font-family="monospace" font-size="8">column.one</text>
+<g transform="translate(42,622) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="3" y="6" width="26" height="20" fill="none" stroke-width="2"/><line x1="12" y1="7" x2="12" y2="25" stroke-width="2"/><line x1="21" y1="7" x2="21" y2="25" stroke-width="2"/>
+  </g>
+<text x="74" y="701" text-anchor="middle" font-family="monospace" font-size="8">column.three</text>
+<g transform="translate(146,622) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="3" y="6" width="26" height="20" fill="none" stroke-width="2"/><line x1="16" y1="7" x2="16" y2="25" stroke-width="2"/>
+  </g>
+<text x="178" y="701" text-anchor="middle" font-family="monospace" font-size="8">column.two</text>
+<g transform="translate(250,622) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="3" y="3" width="26" height="26" fill="none" stroke-width="2"/><line x1="7" y1="16" x2="25" y2="16" stroke-width="3"/>
+  </g>
+<text x="282" y="701" text-anchor="middle" font-family="monospace" font-size="8">control.collapse</text>
+<g transform="translate(354,622) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="3" y="3" width="26" height="26" fill="none" stroke-width="2"/><line x1="7" y1="16" x2="25" y2="16" stroke-width="3"/><line x1="16" y1="7" x2="16" y2="25" stroke-width="3"/>
+  </g>
+<text x="386" y="701" text-anchor="middle" font-family="monospace" font-size="8">control.expand.a</text>
+<g transform="translate(458,622) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="3" y="3" width="26" height="26" fill="none" stroke-width="2"/><line x1="7" y1="16" x2="25" y2="16" stroke-width="3"/><line x1="16" y1="7" x2="16" y2="25" stroke-width="3"/>
+  </g>
+<text x="490" y="701" text-anchor="middle" font-family="monospace" font-size="8">control.expand</text>
+<g transform="translate(562,622) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="5" y="3" width="20" height="25" fill="none" stroke-width="2"/><line x1="9" y1="9" x2="21" y2="9" stroke-width="2"/><rect x="7" y="13" width="16" height="7" fill="#000" stroke="none"/>
+  </g>
+<text x="594" y="701" text-anchor="middle" font-family="monospace" font-size="8">cre.render.parti</text>
+<g transform="translate(666,622) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="5" y="3" width="20" height="25" fill="none" stroke-width="2"/><line x1="9" y1="9" x2="21" y2="9" stroke-width="2"/><path d="M9 16l4 4 10-10" fill="none" stroke-width="3"/>
+  </g>
+<text x="698" y="701" text-anchor="middle" font-family="monospace" font-size="8">cre.render.ready</text>
+<g transform="translate(770,622) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="5" y="3" width="20" height="25" fill="none" stroke-width="2"/><line x1="9" y1="9" x2="21" y2="9" stroke-width="2"/><polygon points="9,11 21,11 15,18 21,25 9,25 15,18" fill="none" stroke-width="2"/>
+  </g>
+<text x="802" y="701" text-anchor="middle" font-family="monospace" font-size="8">cre.render.reloa</text>
+<g transform="translate(42,754) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="5" y="3" width="20" height="25" fill="none" stroke-width="2"/><line x1="9" y1="9" x2="21" y2="9" stroke-width="2"/><path d="M12 14a6 6 0 019-2" fill="none" stroke-width="2"/><path d="M22 8v6h-6" fill="none" stroke-width="2"/>
+  </g>
+<text x="74" y="833" text-anchor="middle" font-family="monospace" font-size="8">cre.render.reloa</text>
+<g transform="translate(146,754) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="5" y="3" width="20" height="25" fill="none" stroke-width="2"/><line x1="9" y1="9" x2="21" y2="9" stroke-width="2"/><polygon points="9,11 21,11 15,18 21,25 9,25 15,18" fill="none" stroke-width="2"/>
+  </g>
+<text x="178" y="833" text-anchor="middle" font-family="monospace" font-size="8">cre.render.worki</text>
+<g transform="translate(250,754) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <line x1="16" y1="4" x2="16" y2="28" stroke-width="3"/><polygon points="16,4 10,10 22,10" fill="#000" stroke="none"/><line x1="10" y1="28" x2="22" y2="28" stroke-width="3"/><polygon points="22,28 18,23 14,28" fill="#000" stroke="none"/>
+  </g>
+<text x="282" y="833" text-anchor="middle" font-family="monospace" font-size="8">direction.BTLR</text>
+<g transform="translate(354,754) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <line x1="4" y1="24" x2="28" y2="4" stroke-width="3"/><polygon points="28,4 21,4 25,11" fill="#000" stroke="none"/><line x1="4" y1="4" x2="28" y2="24" stroke-width="1"/>
+  </g>
+<text x="386" y="833" text-anchor="middle" font-family="monospace" font-size="8">direction.BTRL</text>
+<g transform="translate(458,754) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <line x1="4" y1="16" x2="28" y2="16" stroke-width="3"/><polygon points="4,16 10,10 10,22" fill="#000" stroke="none"/><line x1="28" y1="10" x2="28" y2="22" stroke-width="3"/><polygon points="28,22 23,18 28,14" fill="#000" stroke="none"/>
+  </g>
+<text x="490" y="833" text-anchor="middle" font-family="monospace" font-size="8">direction.LRBT</text>
+<g transform="translate(562,754) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <line x1="4" y1="24" x2="28" y2="4" stroke-width="3"/><polygon points="28,4 21,4 25,11" fill="#000" stroke="none"/><line x1="4" y1="4" x2="28" y2="24" stroke-width="1"/>
+  </g>
+<text x="594" y="833" text-anchor="middle" font-family="monospace" font-size="8">direction.LRTB</text>
+<g transform="translate(666,754) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <line x1="4" y1="16" x2="28" y2="16" stroke-width="3"/><polygon points="4,16 10,10 10,22" fill="#000" stroke="none"/><line x1="28" y1="10" x2="28" y2="22" stroke-width="3"/><polygon points="28,22 23,18 28,14" fill="#000" stroke="none"/>
+  </g>
+<text x="698" y="833" text-anchor="middle" font-family="monospace" font-size="8">direction.RLBT</text>
+<g transform="translate(770,754) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <line x1="4" y1="8" x2="28" y2="8" stroke-width="3"/><polygon points="28,8 22,3 22,13" fill="#000" stroke="none"/><line x1="4" y1="24" x2="28" y2="24" stroke-width="3"/><polygon points="4,24 10,19 10,29" fill="#000" stroke="none"/>
+  </g>
+<text x="802" y="833" text-anchor="middle" font-family="monospace" font-size="8">direction.RLTB</text>
+<g transform="translate(42,886) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <line x1="16" y1="4" x2="16" y2="28" stroke-width="3"/><polygon points="16,4 10,10 22,10" fill="#000" stroke="none"/><line x1="10" y1="28" x2="22" y2="28" stroke-width="3"/><polygon points="22,28 18,23 14,28" fill="#000" stroke="none"/>
+  </g>
+<text x="74" y="965" text-anchor="middle" font-family="monospace" font-size="8">direction.TBLR</text>
+<g transform="translate(146,886) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <line x1="4" y1="8" x2="28" y2="8" stroke-width="3"/><polygon points="28,8 22,3 22,13" fill="#000" stroke="none"/><line x1="4" y1="24" x2="28" y2="24" stroke-width="3"/><polygon points="4,24 10,19 10,29" fill="#000" stroke="none"/>
+  </g>
+<text x="178" y="965" text-anchor="middle" font-family="monospace" font-size="8">direction.TBRL</text>
+<g transform="translate(250,886) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M5 3h17l5 5v21H5z" fill="none" stroke-width="2"/><path d="M22 3v6h5" fill="none" stroke-width="2"/><path d="M10 13l12 12M22 13L10 25" fill="none" stroke-width="2"/>
+  </g>
+<text x="282" y="965" text-anchor="middle" font-family="monospace" font-size="8">dogear.abandoned</text>
+<g transform="translate(354,886) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M5 3h17l5 5v21H5z" fill="none" stroke-width="2"/><path d="M22 3v6h5" fill="none" stroke-width="2"/><path d="M10 13l12 12M22 13L10 25" fill="none" stroke-width="2"/>
+  </g>
+<text x="386" y="965" text-anchor="middle" font-family="monospace" font-size="8">dogear.abandoned</text>
+<g transform="translate(458,886) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M5 3h17l5 5v21H5z" fill="none" stroke-width="2"/><path d="M22 3v6h5" fill="none" stroke-width="2"/><polygon points="22,3 27,8 22,8" fill="none" stroke-width="2"/>
+  </g>
+<text x="490" y="965" text-anchor="middle" font-family="monospace" font-size="8">dogear.alpha</text>
+<g transform="translate(562,886) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M5 3h17l5 5v21H5z" fill="none" stroke-width="2"/><path d="M22 3v6h5" fill="none" stroke-width="2"/><polygon points="22,3 27,8 22,8" fill="#000" stroke="none"/>
+  </g>
+<text x="594" y="965" text-anchor="middle" font-family="monospace" font-size="8">dogear.complete.</text>
+<g transform="translate(666,886) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M5 3h17l5 5v21H5z" fill="none" stroke-width="2"/><path d="M22 3v6h5" fill="none" stroke-width="2"/><polygon points="22,3 27,8 22,8" fill="#000" stroke="none"/>
+  </g>
+<text x="698" y="965" text-anchor="middle" font-family="monospace" font-size="8">dogear.complete</text>
+<g transform="translate(770,886) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M5 3h17l5 5v21H5z" fill="none" stroke-width="2"/><path d="M22 3v6h5" fill="none" stroke-width="2"/><polygon points="22,3 27,8 22,8" fill="none" stroke-width="2"/>
+  </g>
+<text x="802" y="965" text-anchor="middle" font-family="monospace" font-size="8">dogear.opaque</text>
+<g transform="translate(42,1018) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M5 3h17l5 5v21H5z" fill="none" stroke-width="2"/><path d="M22 3v6h5" fill="none" stroke-width="2"/><line x1="9" y1="13" x2="23" y2="13" stroke-width="2"/><line x1="9" y1="17" x2="23" y2="17" stroke-width="2"/><line x1="9" y1="21" x2="23" y2="21" stroke-width="2"/><line x1="9" y1="25" x2="23" y2="25" stroke-width="2"/>
+  </g>
+<text x="74" y="1097" text-anchor="middle" font-family="monospace" font-size="8">dogear.reading</text>
+<g transform="translate(146,1018) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M5 27l3-8L22 5l5 5L13 24z" fill="none" stroke-width="2"/><line x1="7" y1="19" x2="13" y2="25" stroke-width="2"/>
+  </g>
+<text x="178" y="1097" text-anchor="middle" font-family="monospace" font-size="8">edit</text>
+<g transform="translate(250,1018) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M4 5h15v7" fill="none" stroke-width="2"/><path d="M4 5v22h15v-7" fill="none" stroke-width="2"/><line x1="12" y1="16" x2="28" y2="16" stroke-width="3"/><polygon points="28,16 21,10 21,22" fill="#000" stroke="none"/>
+  </g>
+<text x="282" y="1097" text-anchor="middle" font-family="monospace" font-size="8">exit</text>
+<g transform="translate(354,1018) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M3 15L16 4l13 11v14H3z" fill="none" stroke-width="2"/><rect x="12" y="20" width="8" height="9" fill="none" stroke-width="2"/>
+  </g>
+<text x="386" y="1097" text-anchor="middle" font-family="monospace" font-size="8">home</text>
+<g transform="translate(458,1018) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="3" y="3" width="26" height="26" fill="none" stroke-width="2"/><rect x="15" y="8" width="2" height="2" fill="#000" stroke="none"/><rect x="15" y="13" width="2" height="11" fill="#000" stroke="none"/>
+  </g>
+<text x="490" y="1097" text-anchor="middle" font-family="monospace" font-size="8">info</text>
+<g transform="translate(562,1018) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="6" y="3" width="20" height="26" fill="none" stroke-width="2"/><line x1="10" y1="9" x2="22" y2="9" stroke-width="2"/><line x1="10" y1="14" x2="22" y2="14" stroke-width="2"/><line x1="10" y1="18" x2="22" y2="18" stroke-width="2"/><circle cx="20" cy="24" r="4" fill="none" stroke-width="2"/><line x1="16" y1="27" x2="24" y2="21" stroke-width="1"/>
+  </g>
+<text x="594" y="1097" text-anchor="middle" font-family="monospace" font-size="8">license</text>
+<g transform="translate(666,1018) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <line x1="16" y1="4" x2="16" y2="24" stroke-width="3"/><polygon points="16,28 8,20 24,20" fill="#000" stroke="none"/><line x1="7" y1="8" x2="25" y2="8" stroke-width="2"/>
+  </g>
+<text x="698" y="1097" text-anchor="middle" font-family="monospace" font-size="8">move.down</text>
+<g transform="translate(770,1018) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <line x1="16" y1="28" x2="16" y2="8" stroke-width="3"/><polygon points="16,4 8,12 24,12" fill="#000" stroke="none"/><line x1="7" y1="24" x2="25" y2="24" stroke-width="2"/>
+  </g>
+<text x="802" y="1097" text-anchor="middle" font-family="monospace" font-size="8">move.up</text>
+<g transform="translate(42,1150) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M4 4h24v19H16l-7 6v-6H4z" fill="none" stroke-width="2"/><rect x="15" y="8" width="2" height="9" fill="#000" stroke="none"/><rect x="15" y="21" width="2" height="2" fill="#000" stroke="none"/>
+  </g>
+<text x="74" y="1229" text-anchor="middle" font-family="monospace" font-size="8">notice-info</text>
+<g transform="translate(146,1150) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M4 4h24v19H16l-7 6v-6H4z" fill="none" stroke-width="2"/><path d="M12 12c0-5 3-7 5-7 4 0 6 2 6 6 0 4-5 4-5 8" fill="none" stroke-width="2"/><rect x="17" y="23" width="2" height="2" fill="#000" stroke="none"/>
+  </g>
+<text x="178" y="1229" text-anchor="middle" font-family="monospace" font-size="8">notice-question</text>
+<g transform="translate(250,1150) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <polygon points="16,3 30,28 2,28" fill="none" stroke-width="2"/><line x1="16" y1="10" x2="16" y2="20" stroke-width="3"/><rect x="15" y="23" width="2" height="2" fill="#000" stroke="none"/>
+  </g>
+<text x="282" y="1229" text-anchor="middle" font-family="monospace" font-size="8">notice-warning</text>
+<g transform="translate(354,1150) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <line x1="7" y1="16" x2="25" y2="16" stroke-width="3"/><line x1="16" y1="7" x2="16" y2="25" stroke-width="3"/>
+  </g>
+<text x="386" y="1229" text-anchor="middle" font-family="monospace" font-size="8">plus</text>
+<g transform="translate(458,1150) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <polygon points="5,6 27,6 16,25" fill="#000" stroke="none"/>
+  </g>
+<text x="490" y="1229" text-anchor="middle" font-family="monospace" font-size="8">position.marker</text>
+<g transform="translate(562,1150) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <polygon points="5,6 27,6 16,25" fill="#000" stroke="none"/><line x1="5" y1="3" x2="27" y2="3" stroke-width="2"/>
+  </g>
+<text x="594" y="1229" text-anchor="middle" font-family="monospace" font-size="8">position.marker.</text>
+<g transform="translate(666,1150) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="8" y="8" width="16" height="16" fill="none" stroke-width="2"/><path d="M16 3v7M12 6l4-4 4 4" fill="none" stroke-width="2"/><line x1="16" y1="10" x2="16" y2="14" stroke-width="2"/>
+  </g>
+<text x="698" y="1229" text-anchor="middle" font-family="monospace" font-size="8">rotation.0UR</text>
+<g transform="translate(770,1150) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="8" y="8" width="16" height="16" fill="none" stroke-width="2"/><path d="M24 7l3 6-7 1" fill="none" stroke-width="2"/><path d="M7 21v4h5" fill="none" stroke-width="2"/>
+  </g>
+<text x="802" y="1229" text-anchor="middle" font-family="monospace" font-size="8">rotation.180UD</text>
+<g transform="translate(42,1282) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="8" y="8" width="16" height="16" fill="none" stroke-width="2"/><path d="M7 5v8h8" fill="none" stroke-width="2"/><path d="M8 12c2-4 7-5 11-2" fill="none" stroke-width="2"/>
+  </g>
+<text x="74" y="1361" text-anchor="middle" font-family="monospace" font-size="8">rotation.90CCW</text>
+<g transform="translate(146,1282) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="8" y="8" width="16" height="16" fill="none" stroke-width="2"/><path d="M25 5v8h-8" fill="none" stroke-width="2"/><path d="M24 12c-2-4-7-5-11-2" fill="none" stroke-width="2"/>
+  </g>
+<text x="178" y="1361" text-anchor="middle" font-family="monospace" font-size="8">rotation.90CW</text>
+<g transform="translate(250,1282) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="8" y="8" width="16" height="16" fill="none" stroke-width="2"/><path d="M16 3v7M12 6l4-4 4 4" fill="none" stroke-width="2"/><line x1="16" y1="10" x2="16" y2="14" stroke-width="2"/><rect x="3" y="3" width="5" height="5" fill="none" stroke-width="2"/>
+  </g>
+<text x="282" y="1361" text-anchor="middle" font-family="monospace" font-size="8">rotation.L.0UR</text>
+<g transform="translate(354,1282) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="8" y="8" width="16" height="16" fill="none" stroke-width="2"/><path d="M24 7l3 6-7 1" fill="none" stroke-width="2"/><path d="M7 21v4h5" fill="none" stroke-width="2"/><rect x="3" y="3" width="5" height="5" fill="none" stroke-width="2"/>
+  </g>
+<text x="386" y="1361" text-anchor="middle" font-family="monospace" font-size="8">rotation.L.180UD</text>
+<g transform="translate(458,1282) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="8" y="8" width="16" height="16" fill="none" stroke-width="2"/><path d="M7 5v8h8" fill="none" stroke-width="2"/><path d="M8 12c2-4 7-5 11-2" fill="none" stroke-width="2"/><rect x="3" y="3" width="5" height="5" fill="none" stroke-width="2"/>
+  </g>
+<text x="490" y="1361" text-anchor="middle" font-family="monospace" font-size="8">rotation.L.90CCW</text>
+<g transform="translate(562,1282) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="8" y="8" width="16" height="16" fill="none" stroke-width="2"/><path d="M25 5v8h-8" fill="none" stroke-width="2"/><path d="M24 12c-2-4-7-5-11-2" fill="none" stroke-width="2"/><rect x="3" y="3" width="5" height="5" fill="none" stroke-width="2"/>
+  </g>
+<text x="594" y="1361" text-anchor="middle" font-family="monospace" font-size="8">rotation.L.90CW</text>
+<g transform="translate(666,1282) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="8" y="8" width="16" height="16" fill="none" stroke-width="2"/><path d="M16 3v7M12 6l4-4 4 4" fill="none" stroke-width="2"/><line x1="16" y1="10" x2="16" y2="14" stroke-width="2"/><rect x="24" y="24" width="5" height="5" fill="none" stroke-width="2"/>
+  </g>
+<text x="698" y="1361" text-anchor="middle" font-family="monospace" font-size="8">rotation.P.0UR</text>
+<g transform="translate(770,1282) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="8" y="8" width="16" height="16" fill="none" stroke-width="2"/><path d="M24 7l3 6-7 1" fill="none" stroke-width="2"/><path d="M7 21v4h5" fill="none" stroke-width="2"/><rect x="24" y="24" width="5" height="5" fill="none" stroke-width="2"/>
+  </g>
+<text x="802" y="1361" text-anchor="middle" font-family="monospace" font-size="8">rotation.P.180UD</text>
+<g transform="translate(42,1414) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="8" y="8" width="16" height="16" fill="none" stroke-width="2"/><path d="M7 5v8h8" fill="none" stroke-width="2"/><path d="M8 12c2-4 7-5 11-2" fill="none" stroke-width="2"/><rect x="24" y="24" width="5" height="5" fill="none" stroke-width="2"/>
+  </g>
+<text x="74" y="1493" text-anchor="middle" font-family="monospace" font-size="8">rotation.P.90CCW</text>
+<g transform="translate(146,1414) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="8" y="8" width="16" height="16" fill="none" stroke-width="2"/><path d="M25 5v8h-8" fill="none" stroke-width="2"/><path d="M24 12c-2-4-7-5-11-2" fill="none" stroke-width="2"/><rect x="24" y="24" width="5" height="5" fill="none" stroke-width="2"/>
+  </g>
+<text x="178" y="1493" text-anchor="middle" font-family="monospace" font-size="8">rotation.P.90CW</text>
+<g transform="translate(250,1414) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <polygon points="16,3 20,12 30,12 22,18 25,28 16,22 7,28 10,18 2,12 12,12" fill="none" stroke-width="2"/>
+  </g>
+<text x="282" y="1493" text-anchor="middle" font-family="monospace" font-size="8">star.empty</text>
+<g transform="translate(354,1414) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <polygon points="16,3 20,12 30,12 22,18 25,28 16,22 7,28 10,18 2,12 12,12" fill="#000" stroke="none"/>
+  </g>
+<text x="386" y="1493" text-anchor="middle" font-family="monospace" font-size="8">star.full</text>
+<g transform="translate(458,1414) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <polygon points="16,3 20,12 30,12 22,18 25,28 16,22 7,28 10,18 2,12 12,12" fill="none" stroke-width="2"/>
+  </g>
+<text x="490" y="1493" text-anchor="middle" font-family="monospace" font-size="8">star.white</text>
+<g transform="translate(562,1414) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="3" y="3" width="26" height="26" fill="none" stroke-width="2"/><rect x="6" y="6" width="3" height="3" fill="#000" stroke="none"/><rect x="14" y="6" width="3" height="3" fill="#000" stroke="none"/><rect x="22" y="6" width="3" height="3" fill="#000" stroke="none"/><rect x="10" y="10" width="3" height="3" fill="#000" stroke="none"/><rect x="18" y="10" width="3" height="3" fill="#000" stroke="none"/><rect x="26" y="10" width="3" height="3" fill="#000" stroke="none"/><rect x="6" y="14" width="3" height="3" fill="#000" stroke="none"/><rect x="14" y="14" width="3" height="3" fill="#000" stroke="none"/><rect x="22" y="14" width="3" height="3" fill="#000" stroke="none"/><rect x="10" y="18" width="3" height="3" fill="#000" stroke="none"/><rect x="18" y="18" width="3" height="3" fill="#000" stroke="none"/><rect x="26" y="18" width="3" height="3" fill="#000" stroke="none"/><rect x="6" y="22" width="3" height="3" fill="#000" stroke="none"/><rect x="14" y="22" width="3" height="3" fill="#000" stroke="none"/><rect x="22" y="22" width="3" height="3" fill="#000" stroke="none"/><rect x="10" y="26" width="3" height="3" fill="#000" stroke="none"/><rect x="18" y="26" width="3" height="3" fill="#000" stroke="none"/><rect x="26" y="26" width="3" height="3" fill="#000" stroke="none"/>
+  </g>
+<text x="594" y="1493" text-anchor="middle" font-family="monospace" font-size="8">texture-box</text>
+<g transform="translate(666,1414) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <polygon points="6,8 26,8 16,25" fill="#000" stroke="none"/>
+  </g>
+<text x="698" y="1493" text-anchor="middle" font-family="monospace" font-size="8">triangle</text>
+<g transform="translate(770,1414) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="4" y="20" width="4" height="5" fill="none" stroke-width="2"/><rect x="10" y="16" width="4" height="9" fill="none" stroke-width="2"/><rect x="16" y="12" width="4" height="13" fill="none" stroke-width="2"/><rect x="22" y="8" width="4" height="17" fill="none" stroke-width="2"/>
+  </g>
+<text x="802" y="1493" text-anchor="middle" font-family="monospace" font-size="8">wifi.open.0</text>
+<g transform="translate(42,1546) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="4" y="20" width="4" height="5" fill="#000" stroke="none"/><rect x="10" y="16" width="4" height="9" fill="#000" stroke="none"/><rect x="16" y="12" width="4" height="13" fill="#000" stroke="none"/><rect x="22" y="8" width="4" height="17" fill="#000" stroke="none"/>
+  </g>
+<text x="74" y="1625" text-anchor="middle" font-family="monospace" font-size="8">wifi.open.100</text>
+<g transform="translate(146,1546) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="4" y="20" width="4" height="5" fill="#000" stroke="none"/><rect x="10" y="16" width="4" height="9" fill="none" stroke-width="2"/><rect x="16" y="12" width="4" height="13" fill="none" stroke-width="2"/><rect x="22" y="8" width="4" height="17" fill="none" stroke-width="2"/>
+  </g>
+<text x="178" y="1625" text-anchor="middle" font-family="monospace" font-size="8">wifi.open.25</text>
+<g transform="translate(250,1546) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="4" y="20" width="4" height="5" fill="#000" stroke="none"/><rect x="10" y="16" width="4" height="9" fill="#000" stroke="none"/><rect x="16" y="12" width="4" height="13" fill="none" stroke-width="2"/><rect x="22" y="8" width="4" height="17" fill="none" stroke-width="2"/>
+  </g>
+<text x="282" y="1625" text-anchor="middle" font-family="monospace" font-size="8">wifi.open.50</text>
+<g transform="translate(354,1546) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="4" y="20" width="4" height="5" fill="#000" stroke="none"/><rect x="10" y="16" width="4" height="9" fill="#000" stroke="none"/><rect x="16" y="12" width="4" height="13" fill="#000" stroke="none"/><rect x="22" y="8" width="4" height="17" fill="none" stroke-width="2"/>
+  </g>
+<text x="386" y="1625" text-anchor="middle" font-family="monospace" font-size="8">wifi.open.75</text>
+<g transform="translate(458,1546) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="4" y="20" width="4" height="5" fill="none" stroke-width="2"/><rect x="10" y="16" width="4" height="9" fill="none" stroke-width="2"/><rect x="16" y="12" width="4" height="13" fill="none" stroke-width="2"/><rect x="22" y="8" width="4" height="17" fill="none" stroke-width="2"/><rect x="21" y="22" width="9" height="8" fill="none" stroke-width="2"/><path d="M23 22v-2a2.5 2.5 0 015 0v2" fill="none" stroke-width="2"/><rect x="25" y="25" width="1" height="3" fill="#000" stroke="none"/>
+  </g>
+<text x="490" y="1625" text-anchor="middle" font-family="monospace" font-size="8">wifi.secure.0</text>
+<g transform="translate(562,1546) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="4" y="20" width="4" height="5" fill="#000" stroke="none"/><rect x="10" y="16" width="4" height="9" fill="#000" stroke="none"/><rect x="16" y="12" width="4" height="13" fill="#000" stroke="none"/><rect x="22" y="8" width="4" height="17" fill="#000" stroke="none"/><rect x="21" y="22" width="9" height="8" fill="none" stroke-width="2"/><path d="M23 22v-2a2.5 2.5 0 015 0v2" fill="none" stroke-width="2"/><rect x="25" y="25" width="1" height="3" fill="#000" stroke="none"/>
+  </g>
+<text x="594" y="1625" text-anchor="middle" font-family="monospace" font-size="8">wifi.secure.100</text>
+<g transform="translate(666,1546) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="4" y="20" width="4" height="5" fill="#000" stroke="none"/><rect x="10" y="16" width="4" height="9" fill="none" stroke-width="2"/><rect x="16" y="12" width="4" height="13" fill="none" stroke-width="2"/><rect x="22" y="8" width="4" height="17" fill="none" stroke-width="2"/><rect x="21" y="22" width="9" height="8" fill="none" stroke-width="2"/><path d="M23 22v-2a2.5 2.5 0 015 0v2" fill="none" stroke-width="2"/><rect x="25" y="25" width="1" height="3" fill="#000" stroke="none"/>
+  </g>
+<text x="698" y="1625" text-anchor="middle" font-family="monospace" font-size="8">wifi.secure.25</text>
+<g transform="translate(770,1546) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="4" y="20" width="4" height="5" fill="#000" stroke="none"/><rect x="10" y="16" width="4" height="9" fill="#000" stroke="none"/><rect x="16" y="12" width="4" height="13" fill="none" stroke-width="2"/><rect x="22" y="8" width="4" height="17" fill="none" stroke-width="2"/><rect x="21" y="22" width="9" height="8" fill="none" stroke-width="2"/><path d="M23 22v-2a2.5 2.5 0 015 0v2" fill="none" stroke-width="2"/><rect x="25" y="25" width="1" height="3" fill="#000" stroke="none"/>
+  </g>
+<text x="802" y="1625" text-anchor="middle" font-family="monospace" font-size="8">wifi.secure.50</text>
+<g transform="translate(42,1678) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="4" y="20" width="4" height="5" fill="#000" stroke="none"/><rect x="10" y="16" width="4" height="9" fill="#000" stroke="none"/><rect x="16" y="12" width="4" height="13" fill="#000" stroke="none"/><rect x="22" y="8" width="4" height="17" fill="none" stroke-width="2"/><rect x="21" y="22" width="9" height="8" fill="none" stroke-width="2"/><path d="M23 22v-2a2.5 2.5 0 015 0v2" fill="none" stroke-width="2"/><rect x="25" y="25" width="1" height="3" fill="#000" stroke="none"/>
+  </g>
+<text x="74" y="1757" text-anchor="middle" font-family="monospace" font-size="8">wifi.secure.75</text>
+<g transform="translate(146,1678) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="4" y="20" width="4" height="5" fill="#000" stroke="none"/><rect x="10" y="16" width="4" height="9" fill="#000" stroke="none"/><rect x="16" y="12" width="4" height="13" fill="#000" stroke="none"/><rect x="22" y="8" width="4" height="17" fill="none" stroke-width="2"/>
+  </g>
+<text x="178" y="1757" text-anchor="middle" font-family="monospace" font-size="8">wifi</text>
+<g transform="translate(250,1678) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <circle cx="13" cy="13" r="8" fill="none" stroke-width="2"/><line x1="19" y1="19" x2="28" y2="28" stroke-width="4"/><rect x="9" y="8" width="8" height="10" fill="none" stroke-width="1"/><line x1="13" y1="9" x2="13" y2="17" stroke-width="1"/>
+  </g>
+<text x="282" y="1757" text-anchor="middle" font-family="monospace" font-size="8">zoom.column</text>
+<g transform="translate(354,1678) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <circle cx="13" cy="13" r="8" fill="none" stroke-width="2"/><line x1="19" y1="19" x2="28" y2="28" stroke-width="4"/><line x1="9" y1="9" x2="16" y2="9" stroke-width="1"/><line x1="9" y1="12" x2="16" y2="12" stroke-width="1"/><line x1="9" y1="15" x2="13" y2="15" stroke-width="1"/>
+  </g>
+<text x="386" y="1757" text-anchor="middle" font-family="monospace" font-size="8">zoom.content</text>
+<g transform="translate(458,1678) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <circle cx="13" cy="13" r="8" fill="none" stroke-width="2"/><line x1="19" y1="19" x2="28" y2="28" stroke-width="4"/><line x1="10" y1="13" x2="16" y2="13" stroke-width="1"/><line x1="13" y1="10" x2="13" y2="16" stroke-width="1"/>
+  </g>
+<text x="490" y="1757" text-anchor="middle" font-family="monospace" font-size="8">zoom.manual</text>
+<g transform="translate(562,1678) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <circle cx="13" cy="13" r="8" fill="none" stroke-width="2"/><line x1="19" y1="19" x2="28" y2="28" stroke-width="4"/><rect x="9" y="8" width="8" height="10" fill="none" stroke-width="1"/>
+  </g>
+<text x="594" y="1757" text-anchor="middle" font-family="monospace" font-size="8">zoom.page</text>
+<g transform="translate(666,1678) scale(2)" fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <circle cx="13" cy="13" r="8" fill="none" stroke-width="2"/><line x1="19" y1="19" x2="28" y2="28" stroke-width="4"/><rect x="9" y="8" width="8" height="10" fill="none" stroke-width="1"/><line x1="10" y1="13" x2="16" y2="13" stroke-width="1"/>
+  </g>
+<text x="698" y="1757" text-anchor="middle" font-family="monospace" font-size="8">zoom.row</text>
+</svg>

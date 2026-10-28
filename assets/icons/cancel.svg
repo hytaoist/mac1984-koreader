@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <title>cancel</title>
+  <g fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <circle cx="16" cy="16" r="12" fill="none" stroke-width="2"/><path d="M9 9l14 14M23 9L9 23" fill="none" stroke-width="3"/>
+  </g>
+</svg>

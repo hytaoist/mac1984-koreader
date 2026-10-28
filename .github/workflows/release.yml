@@ -1,0 +1,41 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Lua and ZIP tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lua5.4 zip unzip
+          sudo ln -sf /usr/bin/lua5.4 /usr/local/bin/lua
+      - name: Verify tag matches plugin metadata
+        run: |
+          version="$(lua -e 'io.write(assert(dofile("plugin/_meta.lua")).version)')"
+          test "$GITHUB_REF_NAME" = "v$version"
+      - name: Test and build
+        run: |
+          lua tests/patch_smoke_test.lua plugin/theme/apply.lua
+          ./tests/run_loader_test.sh
+          ./tests/run_deploy_test.sh
+          ./tests/run_installer_test.sh
+          ./build.sh
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            "dist/mac1984-koreader-${GITHUB_REF_NAME}.koplugin.zip" \
+            "dist/mac1984-koreader-${GITHUB_REF_NAME}.zip" \
+            "dist/SHA256SUMS" \
+            --title "Macintosh 1984 $GITHUB_REF_NAME" \
+            --generate-notes

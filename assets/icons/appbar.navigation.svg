@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <title>appbar navigation</title>
+  <g fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M3 7c5-2 9-1 13 2v19c-4-3-8-4-13-2z" fill="none" stroke-width="2"/><path d="M29 7c-5-2-9-1-13 2v19c4-3 8-4 13-2z" fill="none" stroke-width="2"/><line x1="16" y1="9" x2="16" y2="27" stroke-width="1"/>
+  </g>
+</svg>

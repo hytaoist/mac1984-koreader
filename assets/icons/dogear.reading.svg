@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <title>dogear reading</title>
+  <g fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M5 3h17l5 5v21H5z" fill="none" stroke-width="2"/><path d="M22 3v6h5" fill="none" stroke-width="2"/><line x1="9" y1="13" x2="23" y2="13" stroke-width="2"/><line x1="9" y1="17" x2="23" y2="17" stroke-width="2"/><line x1="9" y1="21" x2="23" y2="21" stroke-width="2"/><line x1="9" y1="25" x2="23" y2="25" stroke-width="2"/>
+  </g>
+</svg>

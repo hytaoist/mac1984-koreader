@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <title>direction BTLR</title>
+  <g fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <line x1="16" y1="4" x2="16" y2="28" stroke-width="3"/><polygon points="16,4 10,10 22,10" fill="#000" stroke="none"/><line x1="10" y1="28" x2="22" y2="28" stroke-width="3"/><polygon points="22,28 18,23 14,28" fill="#000" stroke="none"/>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <title>stats_calendar</title>
+  <g fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="4" y="6" width="24" height="23" fill="none" stroke-width="2"/><line x1="4" y1="12" x2="28" y2="12" stroke-width="2"/><line x1="11" y1="3" x2="11" y2="9" stroke-width="2"/><line x1="21" y1="3" x2="21" y2="9" stroke-width="2"/><rect x="8" y="16" width="3" height="3" fill="#000" stroke="none"/><rect x="14" y="16" width="3" height="3" fill="#000" stroke="none"/><rect x="20" y="16" width="3" height="3" fill="#000" stroke="none"/><rect x="8" y="22" width="3" height="3" fill="#000" stroke="none"/><rect x="14" y="22" width="3" height="3" fill="#000" stroke="none"/>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <title>close</title>
+  <g fill="none" stroke="#000" stroke-linecap="square" stroke-linejoin="miter">
+    <rect x="3" y="3" width="26" height="26" fill="none" stroke-width="2"/><path d="M8 8l16 16M24 8L8 24" fill="none" stroke-width="3"/>
+  </g>
+</svg>
