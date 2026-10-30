@@ -27,7 +27,8 @@ mkdir -p "$PLUGIN_STAGE" "$STANDALONE_STAGE"
 # Storefront payload: the ZIP root must be a .koplugin directory with _meta.lua.
 cp -R "$SCRIPT_DIR/plugin/." "$PLUGIN_STAGE/"
 mkdir -p "$PLUGIN_STAGE/assets"
-cp -R "$SCRIPT_DIR/assets/icons" "$SCRIPT_DIR/assets/simpleui-icons" "$PLUGIN_STAGE/assets/"
+cp -R "$SCRIPT_DIR/assets/icons" "$SCRIPT_DIR/assets/simpleui-icons" \
+    "$SCRIPT_DIR/assets/sponsor" "$PLUGIN_STAGE/assets/"
 mkdir -p "$PLUGIN_STAGE/assets/fonts"
 cp "$SCRIPT_DIR/assets/fonts/ChicagoFLF.ttf" \
     "$SCRIPT_DIR/assets/fonts/LICENSE-ChicagoFLF.txt" \

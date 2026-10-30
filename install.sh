@@ -229,7 +229,8 @@ while IFS= read -r source; do
     copy_file "$source" "$destination"
     remove_sidecar "$destination"
 done < <(find "$SCRIPT_DIR/assets/icons" "$SCRIPT_DIR/assets/simpleui-icons" \
-    "$SCRIPT_DIR/assets/fonts" -type f ! -name '.DS_Store' ! -name '._*' | sort)
+    "$SCRIPT_DIR/assets/fonts" "$SCRIPT_DIR/assets/sponsor" \
+    -type f ! -name '.DS_Store' ! -name '._*' | sort)
 copy_file "$SCRIPT_DIR/patches/2-mac1984.lua" "$PLUGIN_DEST/loader.lua"
 copy_file "$SCRIPT_DIR/LICENSE" "$PLUGIN_DEST/LICENSE"
 remove_sidecar "$PLUGIN_DEST/loader.lua"

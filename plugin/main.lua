@@ -38,6 +38,21 @@ local function is_web_url(value)
     return type(value) == "string" and value:match("^https?://%S+$") ~= nil
 end
 
+local function is_safe_relative_path(value)
+    return type(value) == "string"
+        and value ~= ""
+        and value:sub(1, 1) ~= "/"
+        and value:match("(^|/)%.%.(/|$)") == nil
+        and value:match("%.[%a%d]+$") ~= nil
+end
+
+local function file_exists(path)
+    local file = path and io.open(path, "rb")
+    if not file then return false end
+    file:close()
+    return true
+end
+
 local function can_open_link()
     local ok, can_open = pcall(function() return Device:canOpenLink() end)
     return ok and can_open == true
@@ -54,6 +69,14 @@ function Mac1984:init()
         self.version = meta.version or self.version
         self.github = meta.github or self.github
         self.sponsor_url = is_web_url(meta.sponsor_url) and meta.sponsor_url or nil
+        if is_safe_relative_path(meta.sponsor_wechat_qr) then
+            local reward_path = self.path .. "/" .. meta.sponsor_wechat_qr
+            if file_exists(reward_path) then
+                self.wechat_reward_path = reward_path
+            else
+                logger.warn("Mac1984: could not find WeChat reward image", reward_path)
+            end
+        end
     end
 
     self.deploy = load_module(self.path .. "/deploy.lua")
@@ -170,13 +193,16 @@ function Mac1984:showAbout()
         if self.sponsor_url then
             text = text .. "\n\n" .. T(_("Sponsor: %1"), self.sponsor_url)
         end
+        if self.wechat_reward_path then
+            text = text .. "\n\n" .. _("WeChat reward code is available from the Sponsor menu.")
+        end
         UIManager:show(InfoMessage:new{ text = text })
         return
     end
 
     local about_dialog
     local buttons = {}
-    if self.sponsor_url then
+    if self.sponsor_url or self.wechat_reward_path then
         table.insert(buttons, {{
             text = _("Sponsor this project"),
             callback = function() self:showSponsor() end,
@@ -214,23 +240,61 @@ function Mac1984:showSponsorQRCode()
     UIManager:show(QRMessage:new{ text = self.sponsor_url })
 end
 
-function Mac1984:showSponsor()
-    if not self.sponsor_url then
+function Mac1984:showWeChatRewardCode()
+    if not file_exists(self.wechat_reward_path) then
         UIManager:show(InfoMessage:new{
-            text = _("A sponsorship link has not been configured."),
+            text = _("The WeChat reward code is missing from this plugin installation."),
+        })
+        return
+    end
+
+    local ok_viewer, ImageViewer = pcall(require, "ui/widget/imageviewer")
+    if not ok_viewer or not ImageViewer then
+        UIManager:show(InfoMessage:new{
+            text = _("This KOReader version cannot display the built-in reward image."),
+        })
+        return
+    end
+
+    UIManager:show(ImageViewer:new{
+        file = self.wechat_reward_path,
+        fullscreen = true,
+        with_title_bar = true,
+        title_text = _("WeChat reward code"),
+    })
+end
+
+function Mac1984:showSponsor()
+    if not self.sponsor_url and not self.wechat_reward_path then
+        UIManager:show(InfoMessage:new{
+            text = _("A sponsorship method has not been configured."),
         })
         return
     end
 
     local ButtonDialog = get_button_dialog()
     if not ButtonDialog then
-        self:showSponsorQRCode()
+        if self.wechat_reward_path then
+            self:showWeChatRewardCode()
+        else
+            self:showSponsorQRCode()
+        end
         return
     end
 
     local sponsor_dialog
-    local buttons = {
-        {
+    local buttons = {}
+    if self.wechat_reward_path then
+        table.insert(buttons, {{
+            text = _("Show WeChat reward code"),
+            callback = function()
+                UIManager:close(sponsor_dialog)
+                self:showWeChatRewardCode()
+            end,
+        }})
+    end
+    if self.sponsor_url then
+        table.insert(buttons, {
             {
                 text = _("Show QR code"),
                 callback = function()
@@ -245,28 +309,37 @@ function Mac1984:showSponsor()
                     self:copySponsorLink()
                 end,
             },
-        },
-    }
-    if can_open_link() then
-        table.insert(buttons, {{
-            text = _("Open sponsor page in browser"),
-            callback = function()
-                UIManager:close(sponsor_dialog)
-                Device:openLink(self.sponsor_url)
-            end,
-        }})
+        })
+        if can_open_link() then
+            table.insert(buttons, {{
+                text = _("Open sponsor page in browser"),
+                callback = function()
+                    UIManager:close(sponsor_dialog)
+                    Device:openLink(self.sponsor_url)
+                end,
+            }})
+        end
     end
     table.insert(buttons, {{
         text = _("Close"),
         callback = function() UIManager:close(sponsor_dialog) end,
     }})
 
+    local sponsor_text = _(
+        "Sponsor Macintosh 1984\n\n"
+        .. "If this theme saves you time or makes your reading setup more enjoyable, "
+        .. "please consider sponsoring its continued maintenance."
+    )
+    if self.sponsor_url then
+        sponsor_text = sponsor_text .. "\n\n" .. self.sponsor_url
+    end
+    if self.wechat_reward_path then
+        sponsor_text = sponsor_text .. "\n\n"
+            .. _("WeChat: open the built-in reward code and scan it with WeChat.")
+    end
+
     sponsor_dialog = ButtonDialog:new{
-        title = T(_(
-            "Sponsor Macintosh 1984\n\n"
-            .. "If this theme saves you time or makes your reading setup more enjoyable, "
-            .. "please consider sponsoring its continued maintenance.\n\n%1"
-        ), self.sponsor_url),
+        title = sponsor_text,
         buttons = buttons,
     }
     UIManager:show(sponsor_dialog)

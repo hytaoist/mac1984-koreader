@@ -18,7 +18,7 @@ mkdir -p "$PLUGIN_DIR/assets" "$DATA_DIR/icons" "$DATA_DIR/fonts" \
     "$SETTINGS_DIR/simpleui/sui_icons/packs/Solar Mono"
 cp -R "$PROJECT_DIR/plugin/." "$PLUGIN_DIR/"
 cp -R "$PROJECT_DIR/assets/icons" "$PROJECT_DIR/assets/simpleui-icons" \
-    "$PROJECT_DIR/assets/fonts" "$PLUGIN_DIR/assets/"
+    "$PROJECT_DIR/assets/fonts" "$PROJECT_DIR/assets/sponsor" "$PLUGIN_DIR/assets/"
 cp "$PROJECT_DIR/patches/2-mac1984.lua" "$PLUGIN_DIR/loader.lua"
 
 printf 'STOCK\n' > "$DATA_DIR/icons/appbar.menu.svg"

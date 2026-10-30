@@ -83,7 +83,7 @@ koreader/.mac1984-theme/version
 安装后完全退出 KOReader 再重新打开。若开启了“保持 KOReader 运行”，请先退出到
 Kindle 主界面。
 
-也可以把 `dist/mac1984-koreader-v1.2.2.koplugin.zip` 解压到
+也可以把 `dist/mac1984-koreader-v1.2.3.koplugin.zip` 解压到
 `koreader/plugins/`；首次启动时插件会自动部署主题并提示重启。
 
 ## 插件菜单
@@ -97,13 +97,15 @@ Kindle 主界面。
 
 ## 赞助支持
 
-**工具 → Macintosh 1984 → About → Sponsor this project** 提供三种赞助入口：
+**工具 → Macintosh 1984 → About → Sponsor this project** 提供以下赞助入口：
 
-- 在电子墨水屏上显示二维码，方便用手机扫码。
-- 复制赞助链接到 KOReader 剪贴板。
-- 在设备支持外部浏览器时直接打开赞助页面。
+- **Show WeChat reward code**：全屏显示内置的微信赞赏码，方便用手机扫码。
+- **Show QR code**：当配置了公开赞助网址时，在电子墨水屏上生成网址二维码。
+- **Copy link**：当配置了公开赞助网址时，复制链接到 KOReader 剪贴板。
+- **Open sponsor page in browser**：设备支持外部浏览器时直接打开赞助页面。
 
-赞助地址由 `plugin/_meta.lua` 中的 `sponsor_url` 统一配置，不需要在界面代码中重复维护。
+微信赞赏码由 `plugin/_meta.lua` 中的 `sponsor_wechat_qr` 指向内置图片；公开赞助网址
+由 `sponsor_url` 配置。两者都可以独立启用，不需要在界面代码中重复维护。
 
 ## 从 v1.1.0 升级
 
@@ -163,8 +165,8 @@ KOReader 改变了某个控件接口，也不会阻止启动。
 输出：
 
 ```text
-dist/mac1984-koreader-v1.2.2.koplugin.zip  Storefront Release asset
-dist/mac1984-koreader-v1.2.2.zip          手动安装包
+dist/mac1984-koreader-v1.2.3.koplugin.zip  Storefront Release asset
+dist/mac1984-koreader-v1.2.3.zip          手动安装包
 dist/SHA256SUMS
 ```
 
@@ -178,7 +180,7 @@ SHA-256 哈希保持一致。
 ```bash
 git init
 git add .
-git commit -m "Macintosh 1984 v1.2.2"
+git commit -m "Macintosh 1984 v1.2.3"
 CREATE_GITHUB_REPO=1 ./publish.sh
 ```
 

@@ -105,15 +105,25 @@ package.preload["ui/widget/qrmessage"] = function()
     return QRMessage
 end
 
+package.preload["ui/widget/imageviewer"] = function()
+    local ImageViewer = {}
+    function ImageViewer:new(options)
+        options.is_image_viewer = true
+        return options
+    end
+    return ImageViewer
+end
+
 local Device = require("device")
 local Mac1984 = assert(loadfile(arg[1] or "plugin/main.lua"))()
 local plugin = Mac1984:extend{
     path = "plugin",
-    version = "1.2.2",
+    version = "1.2.3",
     github = "hytaoist/mac1984-koreader",
     sponsor_url = "https://example.com/sponsor",
+    wechat_reward_path = "assets/sponsor/wechat-reward.jpg",
     deploy = {
-        deployed_version = function() return "1.2.2" end,
+        deployed_version = function() return "1.2.3" end,
     },
 }
 
@@ -134,15 +144,31 @@ local sponsor_button = assert(
 
 sponsor_button.callback()
 assert(shown_widget and shown_widget.is_button_dialog, "Sponsor dialog did not open")
+local wechat_button = assert(
+    find_button(shown_widget, "Show WeChat reward code"),
+    "WeChat reward button missing"
+)
 local qr_button = assert(find_button(shown_widget, "Show QR code"), "Sponsor QR button missing")
 local copy_button = assert(find_button(shown_widget, "Copy link"), "Sponsor copy button missing")
 assert(find_button(shown_widget, "Open sponsor page in browser") == nil,
     "Browser button should be hidden when the device cannot open links")
 
+wechat_button.callback()
+assert(shown_widget and shown_widget.is_image_viewer, "WeChat reward image did not open")
+assert(shown_widget.file == plugin.wechat_reward_path,
+    "WeChat reward image has the wrong path")
+assert(shown_widget.fullscreen == true, "WeChat reward image should use fullscreen mode")
+assert(shown_widget.with_title_bar == true, "WeChat reward image needs its close title bar")
+
+plugin:showSponsor()
+qr_button = assert(find_button(shown_widget, "Show QR code"), "Sponsor QR button missing")
+copy_button = assert(find_button(shown_widget, "Copy link"), "Sponsor copy button missing")
 qr_button.callback()
 assert(shown_widget and shown_widget.is_qr_message, "Sponsor QR code did not open")
 assert(shown_widget.text == plugin.sponsor_url, "Sponsor QR code has the wrong URL")
 
+plugin:showSponsor()
+copy_button = assert(find_button(shown_widget, "Copy link"), "Sponsor copy button missing")
 copy_button.callback()
 assert(copied_text == plugin.sponsor_url, "Sponsor link was not copied")
 assert(shown_widget and shown_widget.is_info_message, "Copy confirmation was not shown")
@@ -155,5 +181,19 @@ local browser_button = assert(
 )
 browser_button.callback()
 assert(opened_url == plugin.sponsor_url, "Sponsor page was not opened")
+
+plugin.sponsor_url = nil
+plugin:showSponsor()
+wechat_button = assert(
+    find_button(shown_widget, "Show WeChat reward code"),
+    "WeChat reward button missing without a sponsor URL"
+)
+assert(find_button(shown_widget, "Show QR code") == nil,
+    "URL QR button should be hidden without a sponsor URL")
+assert(find_button(shown_widget, "Copy link") == nil,
+    "Copy button should be hidden without a sponsor URL")
+wechat_button.callback()
+assert(shown_widget and shown_widget.is_image_viewer,
+    "Image-only sponsor configuration did not open the WeChat reward code")
 
 print("main test OK")
