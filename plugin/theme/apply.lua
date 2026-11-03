@@ -223,6 +223,40 @@ local function apply_theme()
         end
     end
 
+    -- Some widgets briefly exist without a laid-out frame/image. KOReader's
+    -- flash_ui path assumes a geometry and crashes while indexing dimen.
+    -- Keep normal feedback, but skip only the unavailable visual highlight.
+    if not Button._mac1984_flash_guard then
+        Button._mac1984_flash_guard = true
+        local orig_feedback_highlight = Button._doFeedbackHighlight
+        local orig_feedback_unhighlight = Button._undoFeedbackHighlight
+        Button._doFeedbackHighlight = function(self, ...)
+            local frame = self and self[1]
+            if not frame or not frame.dimen then return end
+            return orig_feedback_highlight(self, ...)
+        end
+        Button._undoFeedbackHighlight = function(self, ...)
+            local frame = self and self[1]
+            if not frame or not frame.dimen then return end
+            return orig_feedback_unhighlight(self, ...)
+        end
+    end
+
+    local ok_icon_button, IconButton = pcall(require, "ui/widget/iconbutton")
+    if ok_icon_button and type(IconButton) == "table" and not IconButton._mac1984_flash_guard then
+        IconButton._mac1984_flash_guard = true
+        local orig_icon_tap = IconButton.onTapIconButton
+        IconButton.onTapIconButton = function(self)
+            if not self.callback then return end
+            local flash_enabled = not G_reader_settings:isFalse("flash_ui") and self.allow_flash
+            if flash_enabled and (not self.dimen or not self.image or not self.image.dimen) then
+                self.callback()
+                return true
+            end
+            return orig_icon_tap(self)
+        end
+    end
+
     local ButtonTable = require("ui/widget/buttontable")
     ButtonTable.sep_width = math.max(2, math.floor(Screen:scaleBySize(2)))
     local orig_add_vertical_separator = ButtonTable.addVerticalSeparator

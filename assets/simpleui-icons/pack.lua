@@ -1,7 +1,7 @@
 return {
     name        = "Macintosh 1984",
     author      = "Macintosh 1984 for KOReader",
-    version     = "1.2.3",
+    version     = "1.2.4",
     description = "1-bit square icons for the Macintosh 1984 KOReader theme",
 
     map = {

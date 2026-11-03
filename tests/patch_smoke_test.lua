@@ -95,7 +95,21 @@ package.preload["ui/widget/button"] = function()
     function Button:init()
         self.frame = {}
     end
+    function Button:_doFeedbackHighlight()
+        self.original_highlight_called = true
+    end
+    function Button:_undoFeedbackHighlight()
+        self.original_unhighlight_called = true
+    end
     return Button
+end
+
+package.preload["ui/widget/iconbutton"] = function()
+    local IconButton = {}
+    function IconButton:onTapIconButton()
+        self.original_tap_called = true
+    end
+    return IconButton
 end
 
 package.preload["ui/widget/buttontable"] = function()
@@ -155,6 +169,7 @@ local Size = require("ui/size")
 local FrameContainer = require("ui/widget/container/framecontainer")
 local TitleBar = require("ui/widget/titlebar")
 local Button = require("ui/widget/button")
+local IconButton = require("ui/widget/iconbutton")
 local ButtonTable = require("ui/widget/buttontable")
 local TouchMenu = require("ui/widget/touchmenu")
 local Menu = require("ui/widget/menu")
@@ -196,6 +211,37 @@ TitleBar.paintTo(titlebar, bb, 0, 0)
 local button = { bordersize = 0 }
 Button.init(button)
 assert(button.frame.inner_bordersize == Size.border.default, "Button outline was not applied")
+
+local unlaid_button = { [1] = {} }
+Button._doFeedbackHighlight(unlaid_button)
+Button._undoFeedbackHighlight(unlaid_button)
+assert(not unlaid_button.original_highlight_called, "Button highlight should be skipped without geometry")
+assert(not unlaid_button.original_unhighlight_called, "Button unhighlight should be skipped without geometry")
+
+local laid_button = { [1] = { dimen = { x = 0, y = 0, w = 10, h = 10 } } }
+Button._doFeedbackHighlight(laid_button)
+Button._undoFeedbackHighlight(laid_button)
+assert(laid_button.original_highlight_called, "Button highlight should work with geometry")
+assert(laid_button.original_unhighlight_called, "Button unhighlight should work with geometry")
+
+local callback_called = false
+local unlaid_icon = {
+    allow_flash = true,
+    image = {},
+    callback = function() callback_called = true end,
+}
+assert(IconButton.onTapIconButton(unlaid_icon) == true, "Icon fallback should handle the tap")
+assert(callback_called, "Icon callback should run without geometry")
+assert(not unlaid_icon.original_tap_called, "Icon flash path should be skipped without geometry")
+
+local laid_icon = {
+    allow_flash = true,
+    dimen = { x = 0, y = 0 },
+    image = { dimen = { x = 0, y = 0, w = 10, h = 10 } },
+    callback = function() end,
+}
+IconButton.onTapIconButton(laid_icon)
+assert(laid_icon.original_tap_called, "Icon flash path should run with geometry")
 
 local button_table = {}
 ButtonTable.addVerticalSeparator(button_table)
