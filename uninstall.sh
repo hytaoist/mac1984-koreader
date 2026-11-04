@@ -30,7 +30,8 @@ find_koreader_dir() {
 
 if ! KO_DIR="$(find_koreader_dir "${1:-}")"; then
     printf '%s\n' "KOReader directory not found." >&2
-    printf '%s\n' "Usage: ./uninstall.sh /Volumes/Kindle" >&2
+    printf '%s\n' "Usage: ./uninstall.sh /path/to/mounted-device" >&2
+    printf '%s\n' "   or: ./uninstall.sh /path/to/koreader" >&2
     exit 1
 fi
 

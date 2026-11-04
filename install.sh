@@ -39,7 +39,7 @@ find_koreader_dir() {
 
 if ! KO_DIR="$(find_koreader_dir "${1:-}")"; then
     printf '%s\n' "KOReader directory not found." >&2
-    printf '%s\n' "Usage: ./install.sh /Volumes/Kindle" >&2
+    printf '%s\n' "Usage: ./install.sh /path/to/mounted-device" >&2
     printf '%s\n' "   or: ./install.sh /path/to/koreader" >&2
     exit 1
 fi
@@ -86,7 +86,7 @@ migrate_v1_backups() {
 }
 
 copy_file() {
-    # cat avoids macOS writing AppleDouble "._*" sidecars on exFAT Kindles.
+    # cat avoids macOS writing AppleDouble "._*" sidecars on exFAT volumes.
     cat "$1" > "$2"
 }
 

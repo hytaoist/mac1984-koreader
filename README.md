@@ -1,102 +1,105 @@
 # Macintosh 1984 for KOReader
 
-把 Macintosh 1984 的黑白界面带到 Kindle Paperwhite 4 上的 KOReader 和 SimpleUI。
+**English** | [简体中文](README.zh-CN.md)
 
-- Storefront 安装与更新
-- 支持手动检查和安装 GitHub Release
+Bring the black-and-white Macintosh 1984 interface to KOReader and SimpleUI on any device that can run KOReader.
 
-[下载最新版本](https://github.com/hytaoist/mac1984-koreader/releases/latest)
+- Storefront installation and updates
+- Manual update checks and installs through GitHub Releases
+
+[Download the latest release](https://github.com/hytaoist/mac1984-koreader/releases/latest)
 
 ![Macintosh 1984 for KOReader](preview/mac1984-ui.png)
 
-## 使用要求
+## Requirements
 
-- Kindle Paperwhite 4，且已完成越狱
-- 已安装 KOReader；当前验证版本为 `v2026.07.2`
-- SimpleUI `3.0` 为可选增强，不是运行主题的必需条件
+- A device supported by KOReader
+- KOReader installed; currently verified with `v2026.07.2`
+- SimpleUI `3.0` is optional and is not required to use the theme
 
-其他 Kindle 型号和 KOReader 版本可能可以使用，但尚未经过完整验证。
+Other devices and KOReader versions may work, but have not been fully verified.
 
-## 主要功能
+## Features
 
-- 103 个 KOReader 图标，适配 300 ppi 电子墨水屏
-- 34 个 SimpleUI 图标，并自动切换为 ChicagoFLF 字体
-- 经典条纹标题栏、方形窗口、硬阴影和圆角按钮
-- 不修改 KOReader 核心 Lua 源码；替换的文件均有备份，可从菜单恢复
+- 103 KOReader icons optimized for high-resolution e-ink displays
+- 34 SimpleUI icons with automatic ChicagoFLF font selection
+- Classic striped title bars, square windows, hard shadows, and rounded buttons
+- No modifications to KOReader's core Lua source; replaced files are backed up and can be restored from the menu
 
 <details>
-<summary>查看完整图标集</summary>
+<summary>View the complete icon sets</summary>
 
-![KOReader 图标](preview/icon-sheet.png)
+![KOReader icons](preview/icon-sheet.png)
 
-![SimpleUI 图标](preview/simpleui-icon-sheet.png)
+![SimpleUI icons](preview/simpleui-icon-sheet.png)
 
 </details>
 
-## 安装
+## Installation
 
-### Storefront（推荐）
+### Storefront (Recommended)
 
-1. 打开 KOReader 的 **Storefront**。
-2. 搜索 **Macintosh 1984**，或输入仓库 `hytaoist/mac1984-koreader`。
-3. 安装后完全退出并重新打开 KOReader。
+1. Open **Storefront** in KOReader.
+2. Search for **Macintosh 1984**, or enter the repository name `hytaoist/mac1984-koreader`.
+3. After installation, fully quit and reopen KOReader.
 
-以后在 Storefront 中执行 **Update All** 即可更新。
+Use **Update All** in Storefront to install future updates.
 
-### 手动安装
+### Manual Installation
 
-下载最新版 `mac1984-koreader-v*.koplugin.zip`，解压到 `koreader/plugins/`，最终目录应为：
+Download the latest `mac1984-koreader-v*.koplugin.zip` and extract it into `koreader/plugins/`. The final directory should be:
 
 ```text
 koreader/plugins/mac1984-koreader.koplugin/
 ```
 
-也可以在电脑上连接 Kindle 后运行：
+Alternatively, expose the device storage on a computer and run:
 
 ```bash
-./install.sh /Volumes/Kindle
+./install.sh /path/to/mounted-device
 ```
 
-安装完成后，完全退出 KOReader 再重新打开。如果主题没有出现，请确认 KOReader
-已完全退出，而不是只返回了 Kindle 主界面。
+Fully quit KOReader and reopen it after installation. If the theme does not appear,
+make sure KOReader has fully exited rather than only leaving the app.
 
-## 更新
+## Updates
 
-- Storefront 用户：**Storefront → Update All**
-- 手动安装用户：**工具 → Macintosh 1984 → Check for updates**
+- Storefront users: **Storefront → Update All**
+- Manual-install users: **Tools → Macintosh 1984 → Check for updates**
 
-更新后按提示重启 KOReader。
+Restart KOReader when prompted after updating.
 
-## 插件菜单
+## Plugin Menu
 
-在 **工具 → Macintosh 1984** 中可以：
+The **Tools → Macintosh 1984** menu lets you:
 
-- 重新安装或修复主题文件
-- 检查更新
-- 停用主题并恢复原文件
-- 查看版本与关于信息
+- Reinstall or repair theme files
+- Check for updates
+- Disable the theme and restore the original files
+- View version and about information
 
-## 赞助
+## Sponsor
 
-如果这个主题对你有帮助，可以在以下位置扫码支持后续维护：
+If this theme is useful to you, you can scan the WeChat reward code to support ongoing maintenance:
 
-**工具 → Macintosh 1984 → About → Sponsor this project → Show WeChat reward code**
+**Tools → Macintosh 1984 → About → Sponsor this project → Show WeChat reward code**
 
-## 恢复与卸载
+## Restore and Uninstall
 
-推荐先执行：
+First run:
 
-**工具 → Macintosh 1984 → Disable and restore original files**
+**Tools → Macintosh 1984 → Disable and restore original files**
 
-然后从 Storefront 或 `koreader/plugins/` 中删除插件。也可以运行：
+Then remove the plugin from Storefront or `koreader/plugins/`. You can also run:
 
 ```bash
-./uninstall.sh /Volumes/Kindle
+./uninstall.sh /path/to/mounted-device
 ```
 
-## 更多
+## Development
 
-构建、测试、部署结构和高级设置见 [DEVELOPMENT.md](DEVELOPMENT.md)。
+See [DEVELOPMENT.md](DEVELOPMENT.md) for build, test, deployment, and advanced configuration details.
 
-这是非官方粉丝主题，与 Apple 或 KOReader 项目没有隶属关系。代码使用 MIT
-许可，图标使用 CC0；字体许可见 `assets/fonts/LICENSE-ChicagoFLF.txt`。
+This is an unofficial fan theme and is not affiliated with Apple or the KOReader project.
+The code is licensed under MIT, the icons under CC0, and the font license is available at
+`assets/fonts/LICENSE-ChicagoFLF.txt`.

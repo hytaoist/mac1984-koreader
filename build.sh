@@ -37,7 +37,8 @@ cp "$SCRIPT_DIR/patches/2-mac1984.lua" "$PLUGIN_STAGE/loader.lua"
 cp "$SCRIPT_DIR/LICENSE" "$PLUGIN_STAGE/LICENSE"
 
 # Standalone payload keeps the human-readable installer and source layout.
-cp "$SCRIPT_DIR/README.md" "$SCRIPT_DIR/DEVELOPMENT.md" "$SCRIPT_DIR/LICENSE" \
+cp "$SCRIPT_DIR/README.md" "$SCRIPT_DIR/README.zh-CN.md" \
+    "$SCRIPT_DIR/DEVELOPMENT.md" "$SCRIPT_DIR/LICENSE" \
     "$SCRIPT_DIR/install.sh" "$SCRIPT_DIR/uninstall.sh" "$STANDALONE_STAGE/"
 cp -R "$SCRIPT_DIR/assets" "$SCRIPT_DIR/patches" "$SCRIPT_DIR/plugin" \
     "$SCRIPT_DIR/preview" "$SCRIPT_DIR/tests" "$SCRIPT_DIR/tools" "$STANDALONE_STAGE/"

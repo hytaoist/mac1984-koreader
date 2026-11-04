@@ -1,6 +1,7 @@
 # 开发与发布
 
-本文档面向修改、构建和维护项目的人。普通安装请阅读 [README.md](README.md)。
+本文档面向修改、构建和维护项目的人。普通安装请阅读
+[English README](README.md) 或 [中文说明](README.zh-CN.md)。
 
 ## 项目结构
 
