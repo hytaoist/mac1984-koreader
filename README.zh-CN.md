@@ -60,7 +60,10 @@ koreader/plugins/mac1984-koreader.koplugin/
 ```
 
 安装完成后，完全退出 KOReader 再重新打开。如果主题没有出现，请确认 KOReader
-已完全退出，而不是只退出了应用界面。
+已完全退出，而不是只退出了应用界面。如果只能看到插件菜单，请打开
+**工具 → Macintosh 1984 → Theme diagnostics** 查看诊断信息。
+
+当前版本在 KOReader 跳过或禁用启动用户补丁时，会自动使用兼容后备方式加载主题。
 
 ## 更新
 
@@ -76,6 +79,7 @@ koreader/plugins/mac1984-koreader.koplugin/
 - 重新安装或修复主题文件
 - 检查更新
 - 停用主题并恢复原文件
+- 查看启动补丁与主题运行时诊断
 - 查看版本与关于信息
 
 ## 赞助

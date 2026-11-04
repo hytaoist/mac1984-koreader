@@ -8,15 +8,19 @@
 local logger = require("logger")
 
 if G_reader_settings:isFalse("mac1984_enabled") then
+    _G._mac1984_theme_status = "disabled"
     logger.info("Mac1984: disabled by settings.reader.lua")
     return
 end
 
 if _G._mac1984_theme_loaded then
+    _G._mac1984_theme_status = "loaded"
     logger.info("Mac1984: theme runtime already loaded")
     return
 end
 _G._mac1984_theme_loaded = true
+_G._mac1984_theme_status = "loading"
+_G._mac1984_theme_error = nil
 
 local UI_FONT_FILE = "Mac1984Chicago.ttf"
 local FONT_SLOTS = {
@@ -291,7 +295,11 @@ end
 
 local ok, err = pcall(apply_theme)
 if not ok then
+    _G._mac1984_theme_status = "error"
+    _G._mac1984_theme_error = tostring(err)
     logger.warn("Mac1984: theme failed:", err)
+else
+    _G._mac1984_theme_status = "loaded"
 end
 
 -- SimpleUI applies its saved UI font after instantiation. Reassert Chicago

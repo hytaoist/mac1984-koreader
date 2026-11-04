@@ -60,7 +60,11 @@ Alternatively, expose the device storage on a computer and run:
 ```
 
 Fully quit KOReader and reopen it after installation. If the theme does not appear,
-make sure KOReader has fully exited rather than only leaving the app.
+make sure KOReader has fully exited rather than only leaving the app. If only the
+plugin menu is visible, open **Tools → Macintosh 1984 → Theme diagnostics**.
+
+Current releases include a compatibility fallback that loads the theme when
+KOReader skips or disables startup user patches.
 
 ## Updates
 
@@ -76,6 +80,7 @@ The **Tools → Macintosh 1984** menu lets you:
 - Reinstall or repair theme files
 - Check for updates
 - Disable the theme and restore the original files
+- Inspect startup patch and theme runtime diagnostics
 - View version and about information
 
 ## Sponsor

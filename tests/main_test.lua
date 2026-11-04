@@ -3,6 +3,7 @@
 local shown_widget
 local copied_text
 local opened_url
+local restart_count = 0
 
 local function extend_class(parent, options)
     options = options or {}
@@ -17,11 +18,13 @@ end
 package.preload["datastorage"] = function()
     return {
         getSettingsDir = function() return "/tmp" end,
+        getPatchesDir = function() return "/tmp/patches" end,
     }
 end
 
 package.preload["device"] = function()
     return {
+        getModel = function() return "Test Reader" end,
         canOpenLink = function() return false end,
         openLink = function(_, url) opened_url = url end,
         input = {
@@ -58,7 +61,7 @@ package.preload["ui/uimanager"] = function()
         close = function() shown_widget = nil end,
         nextTick = function(_, callback) callback() end,
         scheduleIn = function(_, _, callback) callback() end,
-        askForRestart = function() end,
+        askForRestart = function() restart_count = restart_count + 1 end,
     }
 end
 
@@ -80,7 +83,10 @@ package.preload["ffi/util"] = function()
 end
 
 package.preload["logger"] = function()
-    return { warn = function() end }
+    return {
+        info = function() end,
+        warn = function() end,
+    }
 end
 
 package.preload["gettext"] = function()
@@ -112,6 +118,13 @@ package.preload["ui/widget/imageviewer"] = function()
         return options
     end
     return ImageViewer
+end
+
+package.preload["userpatch"] = function()
+    return {
+        arePatchesDisabled = function() return false end,
+        execution_status = {},
+    }
 end
 
 local Device = require("device")
@@ -195,5 +208,100 @@ assert(find_button(shown_widget, "Copy link") == nil,
 wechat_button.callback()
 assert(shown_widget and shown_widget.is_image_viewer,
     "Image-only sponsor configuration did not open the WeChat reward code")
+
+local reader_settings = {}
+G_reader_settings = {
+    isFalse = function(_, name) return reader_settings[name] == false end,
+}
+
+local function new_state(initial)
+    local values = initial or {}
+    return {
+        readSetting = function(_, name) return values[name] end,
+        saveSetting = function(_, name, value) values[name] = value end,
+        delSetting = function(_, name) values[name] = nil end,
+        flush = function() end,
+    }, values
+end
+
+local function new_startup_plugin(path, state, deployed_before)
+    return Mac1984:extend{
+        path = path,
+        version = "1.2.5",
+        state = state,
+        deploy = {
+            is_deployed = function() return deployed_before end,
+            deploy = function() return {} end,
+            deployed_version = function() return "1.2.5" end,
+        },
+    }
+end
+
+-- Reproduce the KPW6 report: payload and patch are already deployed, the
+-- patch did not run, and the menu therefore used to remain unthemed forever.
+_G._mac1984_theme_loaded = nil
+_G._mac1984_theme_error = nil
+restart_count = 0
+local deployed_state, deployed_values = new_state()
+local deployed_plugin = new_startup_plugin(
+    "tests/fixtures/fallback-plugin",
+    deployed_state,
+    true
+)
+deployed_plugin:initializeTheme()
+assert(_G._mac1984_fallback_test_loaded,
+    "plugin fallback did not load when the startup patch was skipped")
+assert(deployed_values.deployed_version == "1.2.5",
+    "fallback startup did not record the deployed version")
+assert(restart_count == 0,
+    "an already-deployed fallback startup should not repeatedly ask for a restart")
+
+-- A fresh installation still needs one full restart so files copied after
+-- startup are picked up.
+_G._mac1984_theme_loaded = nil
+_G._mac1984_fallback_test_loaded = nil
+restart_count = 0
+local fresh_state = new_state()
+local fresh_plugin = new_startup_plugin(
+    "tests/fixtures/fallback-plugin",
+    fresh_state,
+    false
+)
+fresh_plugin:initializeTheme()
+assert(_G._mac1984_fallback_test_loaded, "fresh-install fallback did not run")
+assert(restart_count == 1, "fresh installation did not request the required restart")
+
+-- Disabling the theme must not load a runtime.
+_G._mac1984_theme_loaded = nil
+_G._mac1984_fallback_test_loaded = nil
+local disabled_state = new_state({ disabled = true })
+local disabled_plugin = new_startup_plugin(
+    "tests/fixtures/fallback-plugin",
+    disabled_state,
+    true
+)
+disabled_plugin:initializeTheme()
+assert(_G._mac1984_fallback_test_loaded == nil,
+    "disabled theme unexpectedly loaded its runtime")
+
+-- Runtime failures should be stored and visible in diagnostics.
+_G._mac1984_theme_loaded = nil
+_G._mac1984_theme_error = nil
+local broken_state, broken_values = new_state()
+local broken_plugin = new_startup_plugin(
+    "tests/fixtures/missing-runtime",
+    broken_state,
+    true
+)
+broken_plugin:initializeTheme()
+assert(type(broken_values.last_theme_error) == "string",
+    "runtime load failures were not persisted")
+broken_plugin:showDiagnostics()
+assert(shown_widget and shown_widget.is_info_message,
+    "diagnostics did not open an info message")
+assert(shown_widget.text:find("Theme runtime: not loaded", 1, true),
+    "diagnostics did not report the runtime state")
+assert(shown_widget.text:find("Last error:", 1, true),
+    "diagnostics did not include the last error")
 
 print("main test OK")

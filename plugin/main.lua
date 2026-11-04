@@ -90,13 +90,14 @@ function Mac1984:init()
 end
 
 function Mac1984:initializeTheme()
-    if not self.deploy or self.state:readSetting("disabled") == true then return end
+    if not self.deploy or not self:isThemeEnabled() then return end
     if not self.version then
         logger.warn("Mac1984: plugin version is missing")
         return
     end
 
     local deployed_before = self.deploy.is_deployed(self.version)
+    local runtime_was_loaded = _G._mac1984_theme_loaded == true
     local report, deploy_error = self.deploy.deploy(self.path, self.version)
     if not report then
         logger.warn("Mac1984: deployment failed:", deploy_error)
@@ -116,17 +117,70 @@ function Mac1984:initializeTheme()
     self.state:saveSetting("last_deployed_at", os.time())
     self.state:flush()
 
+    -- User patches are the preferred startup path, but some KOReader builds
+    -- disable or skip them. Load the runtime from the plugin as a fallback
+    -- instead of remaining silently unthemed.
+    local runtime_loaded = runtime_was_loaded
+    local runtime_error = _G._mac1984_theme_error
+    if not runtime_loaded then
+        runtime_loaded, runtime_error = self:loadThemeRuntime()
+    end
+    self:recordThemeRuntimeError(runtime_error)
+
     if deployed_before then return end
     UIManager:scheduleIn(1, function()
         -- On a Storefront update the tiny user patch has usually already loaded
         -- the new runtime. In that case assets were refreshed during this boot
         -- and an extra restart would be unnecessary.
-        if _G._mac1984_theme_loaded then return end
+        if runtime_was_loaded then return end
         UIManager:askForRestart(_(
             "Macintosh 1984 theme files are ready.\n\n"
             .. "KOReader needs to restart once to apply the theme and its icons."
         ))
     end)
+end
+
+function Mac1984:loadThemeRuntime()
+    if _G._mac1984_theme_loaded then return true, _G._mac1984_theme_error end
+
+    local runtime = self.path .. "/theme/apply.lua"
+    if not file_exists(runtime) then
+        return false, "Theme runtime is missing: " .. runtime
+    end
+
+    local ok, load_error = pcall(dofile, runtime)
+    if not ok then
+        return false, tostring(load_error)
+    end
+    if not _G._mac1984_theme_loaded then
+        return false, _G._mac1984_theme_error
+            or "Theme runtime returned without initializing"
+    end
+    logger.info("Mac1984: compatibility runtime loaded from", runtime)
+    return true, _G._mac1984_theme_error
+end
+
+function Mac1984:recordThemeRuntimeError(runtime_error)
+    if not runtime_error then
+        self.state:delSetting("last_theme_error")
+        self.state:flush()
+        return
+    end
+
+    runtime_error = tostring(runtime_error)
+    logger.warn("Mac1984: theme runtime error:", runtime_error)
+    local previous = self.state:readSetting("last_theme_error")
+    self.state:saveSetting("last_theme_error", runtime_error)
+    self.state:flush()
+    if previous ~= runtime_error then
+        UIManager:show(InfoMessage:new{
+            text = T(_(
+                "Macintosh 1984 could not fully apply its theme runtime.\n\n"
+                .. "%1\n\nOpen Tools > Macintosh 1984 > Theme diagnostics for details."
+            ), runtime_error),
+            timeout = 8,
+        })
+    end
 end
 
 function Mac1984:reinstallTheme()
@@ -174,6 +228,65 @@ end
 function Mac1984:isThemeEnabled()
     return self.state:readSetting("disabled") ~= true
         and not G_reader_settings:isFalse("mac1984_enabled")
+end
+
+function Mac1984:getThemeDiagnostics()
+    local patch_path = "unknown"
+    local ok_storage, DataStorageModule = pcall(require, "datastorage")
+    if ok_storage and type(DataStorageModule.getPatchesDir) == "function" then
+        local ok_dir, directory = pcall(DataStorageModule.getPatchesDir, DataStorageModule)
+        if ok_dir and directory then
+            patch_path = directory .. "/2-mac1984.lua"
+        end
+    end
+
+    local patch_status = _("not run")
+    local ok_patch, userpatch = pcall(require, "userpatch")
+    if ok_patch and type(userpatch) == "table" then
+        if type(userpatch.arePatchesDisabled) == "function"
+            and userpatch.arePatchesDisabled() then
+            patch_status = _("user patches are disabled")
+        elseif type(userpatch.execution_status) == "table" then
+            local status = userpatch.execution_status["2-mac1984.lua"]
+            if status == true then
+                patch_status = _("ran successfully")
+            elseif status == false then
+                patch_status = _("failed")
+            end
+        end
+    end
+
+    local model = "unknown"
+    local ok_model, model_name = pcall(Device.getModel, Device)
+    if ok_model and model_name then model = tostring(model_name) end
+
+    local runtime_state = _G._mac1984_theme_loaded and _("loaded") or _("not loaded")
+    local runtime_error = _G._mac1984_theme_error
+        or self.state:readSetting("last_theme_error")
+        or _("none")
+    local plugin_setting = self:isThemeEnabled() and _("enabled") or _("disabled")
+    local patch_file = file_exists(patch_path) and _("present") or _("missing")
+    local runtime_file = file_exists(self.path .. "/theme/apply.lua")
+        and _("present") or _("missing")
+
+    return table.concat({
+        T(_("Device: %1"), model),
+        T(_("Plugin: v%1"), self.version or "?"),
+        T(_("Installed payload: %1"),
+            self.deploy and self.deploy.deployed_version() or _("not installed")),
+        T(_("Plugin setting: %1"), plugin_setting),
+        T(_("Theme runtime: %1"), runtime_state),
+        T(_("Runtime file: %1"), runtime_file),
+        T(_("Startup patch: %1"), patch_status),
+        T(_("Patch file: %1"), patch_file),
+        T(_("Last error: %1"), runtime_error),
+    }, "\n")
+end
+
+function Mac1984:showDiagnostics()
+    UIManager:show(InfoMessage:new{
+        text = _("Macintosh 1984 diagnostics") .. "\n\n" .. self:getThemeDiagnostics(),
+    })
 end
 
 function Mac1984:showAbout()
@@ -457,6 +570,11 @@ function Mac1984:getSubMenu()
     table.insert(items, {
         text = _("Check for updates"),
         callback = function() self:checkForUpdate() end,
+    })
+    table.insert(items, {
+        text = _("Theme diagnostics"),
+        callback = function() self:showDiagnostics() end,
+        keep_menu_open = true,
     })
     table.insert(items, {
         text = _("About"),

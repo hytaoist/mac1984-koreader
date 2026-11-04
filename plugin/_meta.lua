@@ -2,7 +2,7 @@ return {
     name = "mac1984",
     fullname = "Macintosh 1984",
     description = "A 1-bit Macintosh 1984 interface, icon and font theme for KOReader and SimpleUI.",
-    version = "1.2.4",
+    version = "1.2.5",
     author = "hytaoist",
     github = "hytaoist/mac1984-koreader",
     sponsor_url = nil,
